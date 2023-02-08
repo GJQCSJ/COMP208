@@ -14,7 +14,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> TEST = ITEMS.register("test_item",
             () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
-
+    public static final RegistryObject<Item> TEST2 = ITEMS.register("test_item2",
+            () -> new Item(new Item.Properties().tab(CreativeModeTab.TAB_MISC)));
 
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
