@@ -2,5 +2,9 @@
   "item.comp208mod.test_item": "Test item",
   "item.comp208mod.test_item2": "Test item2",
 
-  "itemGroup.comp208mod": "Test Group"
+  "itemGroup.comp208mod": "Test Group",
+
+  "block.comp208mod.test_block_template": "Template Block",
+  "block.comp208mod.test_block_ore": "Test Ore Block",
+  "block.comp208mod.test_block": "Test Block"
 }

@@ -19,7 +19,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
-    public static final DeferredRegister<Block> BLOCKS1 =
+    public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
 
     public static final RegistryObject<Block> TEMPLATE_BLOCK =registerBlock("test_block_template",
@@ -38,19 +38,19 @@ public class ModBlocks {
             ModCreativeModeTab.Test_Demo);
 
 
-            public static final RegistryObject<Block> TEST_BLOCK2 =registerBlock("test_block_ore",
-                    () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
-                            .strength(6f).requiresCorrectToolForDrops(),
-                            UniformInt.of(5, 9)
-                            /*UniformInt.of will let block drop experience when being excavated,
-                            ,two values means the range of experience it would drop*/
+    public static final RegistryObject<Block> TEST_BLOCK2 =registerBlock("test_block_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(6f).requiresCorrectToolForDrops(),
+                    UniformInt.of(3, 9)
+                    /*UniformInt.of will let block drop experience when being excavated,
+                           ,two values means the range of experience it would drop*/
                     ),
-                    ModCreativeModeTab.Test_Demo);
+            ModCreativeModeTab.Test_Demo);
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(
             String name, Supplier<T> block, CreativeModeTab tab){
-        RegistryObject<T> toReturn = BLOCKS1.register(name, block);
+        RegistryObject<T> toReturn = BLOCKS.register(name, block);
         registerBlockItem(name, toReturn, tab);
         return toReturn;
         /*register blocks*/
@@ -64,6 +64,7 @@ public class ModBlocks {
 
 
     public static void register(IEventBus eventBus){
-        BLOCKS1.register(eventBus);
+
+        BLOCKS.register(eventBus);
     }
 }
