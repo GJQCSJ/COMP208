@@ -23,7 +23,7 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
 
     public static final RegistryObject<Block> TEMPLATE_BLOCK =registerBlock("test_block_template",
-            () -> new Block(BlockBehaviour.Properties.of(Material.DIRT).strength(1f)),
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f)),
             ModCreativeModeTab.Test_Demo);
                 /*Create and register a new block, properties inside brackets:
             the name of it,
@@ -32,7 +32,7 @@ public class ModBlocks {
               of block*/
 
     public static final RegistryObject<Block> TEST_BLOCK1 = registerBlock("test_block",
-            () -> new Block(BlockBehaviour.Properties.of(Material.SAND).
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).
                     jumpFactor(10).strength(6f, 9)
                     .requiresCorrectToolForDrops()),
             ModCreativeModeTab.Test_Demo);
