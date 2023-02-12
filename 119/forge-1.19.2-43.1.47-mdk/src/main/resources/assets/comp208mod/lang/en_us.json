@@ -1,7 +1,18 @@
 {
   "item.comp208mod.test_item": "Test item",
   "item.comp208mod.test_item2": "Test item2",
-  "item.comp208mod.mod_sword": "Mod Sword",
+
+  "item.comp208mod.test_advanced_item1": "Advanced item1",
+
+  "item.comp209mod.test_food1": "Food1",
+
+  "item.comp209mod.test_sword": "Sword1",
+  "item.comp209mod.test_pickaxe": "Pickaxe1",
+
+  "item.comp209mod.test_helmet": "Helmet1",
+  "item.comp209mod.test_chest_plate": "Chest plate1",
+  "item.comp209mod.test_leggings": "Leggings1",
+  "item.comp209mod.test_boots": "Boots1",
 
   "itemGroup.comp208mod": "Test Group",
 

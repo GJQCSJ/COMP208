@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "comp208mod:test_item1",
+    "comp208mod:test_item2",
+    "comp208mod:test_block_ore",
+    "comp208mod:test_block_template"
+  ]
+}

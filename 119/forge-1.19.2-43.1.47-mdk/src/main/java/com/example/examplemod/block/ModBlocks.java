@@ -67,4 +67,11 @@ public class ModBlocks {
 
         BLOCKS.register(eventBus);
     }
+
+//    private static <T extends Block> RegistryObject<T> AdvancedRegister(String name, Supplier<T> supplier,
+//                                                                      Item.Properties properties){
+//        RegistryObject<T> block = BLOCKS.register(name, supplier);
+//        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(), properties));
+//        return block;
+//    }
 }
