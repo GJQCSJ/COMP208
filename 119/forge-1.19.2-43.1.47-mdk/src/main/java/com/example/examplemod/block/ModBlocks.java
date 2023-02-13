@@ -1,5 +1,6 @@
 package com.example.examplemod.block;
 
+import com.example.examplemod.block.custom.JumpBlock;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
 import com.example.examplemod.item.ModItems;
@@ -46,6 +47,13 @@ public class ModBlocks {
                            ,two values means the range of experience it would drop*/
                     ),
             ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> JUMP_BLOCK = registerBlock("jump_block",
+            () -> new JumpBlock(BlockBehaviour.Properties
+                    .of(Material.LEAVES)
+                    .strength(6F)
+            ),
+                    ModCreativeModeTab.Test_Demo);
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(

@@ -20,5 +20,6 @@
 
   "block.comp208mod.test_block_template": "Template Block",
   "block.comp208mod.test_block_ore": "Test Ore Block",
-  "block.comp208mod.test_block": "Test Block"
+  "block.comp208mod.test_block": "Test Block",
+  "block.comp208mod.jump_block": "Jump Block"
 }
