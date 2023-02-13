@@ -53,6 +53,12 @@ public class ModItems {
                     props()
             )
     );
+    public static final RegistryObject<Item> TEST_BOW = ITEMS.register("test_bow",
+            () -> new BowItem(props()
+                    .durability(600)
+            )
+
+    );
     /*
     End of Tools & Weapons
      */

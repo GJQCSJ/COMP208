@@ -1,0 +1,6 @@
+{
+    "parent": "comp208mod:item/test_bow",
+    "textures": {
+        "layer0": "comp208mod:item/test_bow_pulling_0"
+    }
+}

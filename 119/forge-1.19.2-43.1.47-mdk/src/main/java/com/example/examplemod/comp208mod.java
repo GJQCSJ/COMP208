@@ -2,6 +2,7 @@ package com.example.examplemod;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;
+import com.example.examplemod.util.ModItemProperties;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -30,6 +31,8 @@ public class comp208mod {
         ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
+        modEventBus.addListener(this::clientSetup);
+        /* Register setups */
 
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -37,6 +40,9 @@ public class comp208mod {
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
+    }
+    private void clientSetup(final FMLClientSetupEvent event){
+        ModItemProperties.addCustomItemProperties();
     }
 
         @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
