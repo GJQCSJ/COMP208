@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=true": {
+      "model": "comp208mod:block/block_custom_lamp_on"
+    },
+    "lit=false": {
+      "model": "comp208mod:block/block_custom_lamp_off"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 package com.example.examplemod.block;
 
+import com.example.examplemod.block.custom.CustomLampBlock;
 import com.example.examplemod.block.custom.JumpBlock;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
@@ -20,6 +21,10 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.function.Supplier;
 
 public class ModBlocks {
+
+    /*
+    * Block inside the world -> blockstate
+    * Block itself -> block class -> a type of the block */
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
 
@@ -54,6 +59,16 @@ public class ModBlocks {
                     .strength(6F)
             ),
                     ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> CUSTOM_LAMP = registerBlock("block_custom_lamp",
+            () -> new JumpBlock(BlockBehaviour.Properties
+                    .of(Material.GLASS)
+                    .requiresCorrectToolForDrops()
+                    .lightLevel(state -> state.getValue(CustomLampBlock.LIT) ? 15 : 0)
+                    .strength(6F)
+                    /* 15 means light level when activated, 0 means when deactivated */
+            ),
+            ModCreativeModeTab.Test_Demo);
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(
