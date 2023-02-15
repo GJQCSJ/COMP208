@@ -3,6 +3,8 @@ package com.example.examplemod;
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;
 import com.example.examplemod.util.ModItemProperties;
+import com.example.examplemod.world.feature.ModConfiguredFeatures;
+import com.example.examplemod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -31,6 +33,10 @@ public class comp208mod {
         ModItems.register(modEventBus);
 
         ModBlocks.register(modEventBus);
+
+        ModConfiguredFeatures.register(modEventBus);
+
+        ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
         modEventBus.addListener(this::clientSetup);

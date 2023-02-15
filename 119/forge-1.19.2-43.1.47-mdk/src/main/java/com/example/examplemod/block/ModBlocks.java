@@ -46,7 +46,7 @@ public class ModBlocks {
             ModCreativeModeTab.Test_Demo);
 
 
-    public static final RegistryObject<Block> TEST_BLOCK2 =registerBlock("test_block_ore",
+    public static final RegistryObject<Block> TEST_BLOCK_ORE =registerBlock("test_block_ore",
             () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
                     .strength(6f).requiresCorrectToolForDrops(),
                     UniformInt.of(3, 9)

@@ -41,8 +41,8 @@ public class JumpBlock extends Block {
 
     @Override
     public void stepOn(Level pLevel, BlockPos pPos, BlockState pState, Entity pEntity) {
-        if(pEntity instanceof LivingEntity LivingEntity){
-            LivingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 120));
+        if(pEntity instanceof LivingEntity livingEntity){
+            livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 120));
         }
         super.stepOn(pLevel, pPos, pState, pEntity);
     }
