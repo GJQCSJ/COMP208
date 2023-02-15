@@ -1,7 +1,8 @@
 package com.example.examplemod.item;
 
+import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
-import com.example.examplemod.item.custom.Test_AdvanceItem;
+import com.example.examplemod.item.custom.TestAdvanceItem;
 import com.example.examplemod.util.ModTags;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.client.renderer.EffectInstance;
@@ -28,7 +29,7 @@ public class ModItems {
     public static final RegistryObject<Item> TEST2 = ITEMS.register("test_item2",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> TEST_ADV = ITEMS.register("test_advanced_item1",
-            () -> new Test_AdvanceItem(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
+            () -> new TestAdvanceItem(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
 
     private static Item.Properties props(){
         return new Item.Properties().tab(ModCreativeModeTab.Test_Demo);
@@ -72,6 +73,23 @@ public class ModItems {
             () -> new Item(new Item.Properties()
                     .tab(ModCreativeModeTab.Test_Demo)
                     .food(Foods.TEST_FOOD1)
+            )
+    );
+
+    public static final RegistryObject<Item> CUSTOM_BERRY_SEEDS = ITEMS.register("custom_berry_seed",
+            () -> new ItemNameBlockItem(ModBlocks.BERRY_BLOCK.get(),
+                    props()
+            )
+    );
+
+    public static final RegistryObject<Item> CUSTOM_BERRY = ITEMS.register("custom_berry",
+            () -> new Item(
+                    props()
+                            .food(new FoodProperties.Builder().nutrition(1)
+                                    .fast()
+                                    .saturationMod(2f)
+                                    .build()
+                            )
             )
     );
     public static class Foods{

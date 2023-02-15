@@ -4,12 +4,15 @@
 
   "item.comp208mod.test_advanced_item1": "Advanced item1",
 
-  "item.comp209mod.test_food1": "Food1",
+  "item.comp208mod.test_food1": "Food1",
+  "item.comp208mod.custom_berry": "Custom Berry",
+  "item.comp208mod.custom_berry_seed": "Custom Berry Seed",
+
 
   "item.comp208mod.test_sword": "Sword1",
   "item.comp208mod.test_pickaxe": "Pickaxe1",
 
-  "item.comp208mod.kaupenbow": "Test bow",
+  "item.comp208mod.test_bow": "Test bow",
 
   "item.comp208mod.test_helmet": "Helmet1",
   "item.comp208mod.test_chest_plate": "Chest plate1",
@@ -21,6 +24,8 @@
   "block.comp208mod.test_block_template": "Template Block",
   "block.comp208mod.test_block_ore": "Test Ore Block",
   "block.comp208mod.test_block": "Test Block",
+
+  "block.comp208mod.custom_berry_crop": "Custom Berry Crops",
 
   "block.comp208mod.jump_block": "Jump Block",
   "block.comp208mod.block_custom_lamp": "Custom Lamp Block"

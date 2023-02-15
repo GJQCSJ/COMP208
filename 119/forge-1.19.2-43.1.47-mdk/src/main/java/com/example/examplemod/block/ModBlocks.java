@@ -1,5 +1,6 @@
 package com.example.examplemod.block;
 
+import com.example.examplemod.block.custom.BerryCropBlock;
 import com.example.examplemod.block.custom.CustomLampBlock;
 import com.example.examplemod.block.custom.JumpBlock;
 import com.example.examplemod.comp208mod;
@@ -10,6 +11,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
@@ -61,14 +63,20 @@ public class ModBlocks {
                     ModCreativeModeTab.Test_Demo);
 
     public static final RegistryObject<Block> CUSTOM_LAMP = registerBlock("block_custom_lamp",
-            () -> new JumpBlock(BlockBehaviour.Properties
-                    .of(Material.GLASS)
+            () -> new CustomLampBlock(BlockBehaviour.Properties
+                    .of(Material.STONE)
                     .requiresCorrectToolForDrops()
                     .lightLevel(state -> state.getValue(CustomLampBlock.LIT) ? 15 : 0)
                     .strength(6F)
                     /* 15 means light level when activated, 0 means when deactivated */
             ),
             ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> BERRY_BLOCK = BLOCKS.register("custom_berry_crop",
+            () -> new BerryCropBlock(BlockBehaviour.Properties
+                    .copy(Blocks.WHEAT)
+            )
+    );
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(

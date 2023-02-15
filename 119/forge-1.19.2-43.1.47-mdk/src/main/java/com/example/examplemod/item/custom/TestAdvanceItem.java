@@ -15,8 +15,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class Test_AdvanceItem extends Item {
-    public Test_AdvanceItem(Properties pProperties) {
+public class TestAdvanceItem extends Item {
+    public TestAdvanceItem(Properties pProperties) {
         super(pProperties);
     }
 

@@ -1,0 +1,7 @@
+{
+  "parent": "block/crop",
+  "render_type": "cutout",
+  "textures": {
+    "crop": "comp208mod:block/custom_berry_crop_stage3"
+  }
+}

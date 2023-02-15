@@ -1,6 +1,6 @@
 {
   "parent": "block/cube_all",
   "textures": {
-    "all": "comp208mod:block/block_custom_lamp"
+    "all": "comp208mod:block/block_custom_lamp_off"
   }
 }

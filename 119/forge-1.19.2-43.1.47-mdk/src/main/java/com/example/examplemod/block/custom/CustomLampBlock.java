@@ -1,6 +1,11 @@
 package com.example.examplemod.block.custom;
 
+import net.minecraft.client.particle.DustParticle;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.core.particles.DustParticleOptions;
+import net.minecraft.core.particles.DustParticleOptionsBase;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
@@ -29,7 +34,30 @@ public class CustomLampBlock extends Block {
     }
 
     @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        if(pState.getValue(LIT)){
+            spawnLightParticles(pLevel, pPos);
+        }
+    }
+
+    @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(LIT);
+    }
+    private static void spawnLightParticles(Level pLevel, BlockPos pPos) {
+        double d0 = 0.5625D;
+        RandomSource randomsource = pLevel.random;
+
+        for(Direction direction : Direction.values()) {
+            BlockPos blockpos = pPos.relative(direction);
+            if (!pLevel.getBlockState(blockpos).isSolidRender(pLevel, blockpos)) {
+                Direction.Axis direction$axis = direction.getAxis();
+                double d1 = direction$axis == Direction.Axis.X ? 0.5D + 0.5625D * (double)direction.getStepX() : (double)randomsource.nextFloat();
+                double d2 = direction$axis == Direction.Axis.Y ? 0.5D + 0.5625D * (double)direction.getStepY() : (double)randomsource.nextFloat();
+                double d3 = direction$axis == Direction.Axis.Z ? 0.5D + 0.5625D * (double)direction.getStepZ() : (double)randomsource.nextFloat();
+                pLevel.addParticle(DustParticleOptions.REDSTONE, (double)pPos.getX() + d1, (double)pPos.getY() + d2, (double)pPos.getZ() + d3, 0.0D, 0.0D, 0.0D);
+            }
+        }
+
     }
 }
