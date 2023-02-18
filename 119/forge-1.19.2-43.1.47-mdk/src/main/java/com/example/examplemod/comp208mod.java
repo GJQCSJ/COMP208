@@ -31,11 +31,9 @@ public class comp208mod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
-
         ModBlocks.register(modEventBus);
 
         ModConfiguredFeatures.register(modEventBus);
-
         ModPlacedFeatures.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);

@@ -28,5 +28,8 @@
   "block.comp208mod.custom_berry_crop": "Custom Berry Crops",
 
   "block.comp208mod.jump_block": "Jump Block",
-  "block.comp208mod.block_custom_lamp": "Custom Lamp Block"
+  "block.comp208mod.block_custom_lamp": "Custom Lamp Block",
+
+  "key.category.comp208mod.custom": "Comp208 Mod",
+  "key.comp208mod.drink_water": "Drink Water"
 }
