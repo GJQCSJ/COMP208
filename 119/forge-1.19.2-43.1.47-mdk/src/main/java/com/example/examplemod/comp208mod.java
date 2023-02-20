@@ -5,11 +5,20 @@ import com.example.examplemod.item.ModItems;
 import com.example.examplemod.util.ModItemProperties;
 import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
+import com.google.common.collect.ImmutableMultimap;
+import com.google.common.collect.Multimap;
 import com.mojang.logging.LogUtils;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.Attribute;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.Lazy;
+import net.minecraftforge.event.entity.EntityAttributeModificationEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +26,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(comp208mod.MOD_ID)
@@ -43,6 +53,10 @@ public class comp208mod {
         MinecraftForge.EVENT_BUS.register(this);
     }
 
+//    @SubscribeEvent
+//    public static void onEntityAttributeModificationEvent(final EntityAttributeModificationEvent event) {
+//        event.add(EntityType.PLAYER, ForgeMod.ATTACK_RANGE.get());
+//    }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
 
@@ -56,6 +70,10 @@ public class comp208mod {
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+        }
+        @SubscribeEvent
+        public static void onEntityAttributeModificationEvent(final EntityAttributeModificationEvent event) {
+            event.add(EntityType.PLAYER, ForgeMod.REACH_DISTANCE.get());
         }
     }
 }

@@ -2,6 +2,7 @@ package com.example.examplemod.item;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.item.custom.ExampleReachItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
 import com.example.examplemod.util.ModTags;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
@@ -59,6 +60,15 @@ public class ModItems {
                     .durability(600)
             )
 
+    );
+    public static final RegistryObject<ExampleReachItem> GREAT_SWORD = ITEMS.register("great_sword",
+            () -> new ExampleReachItem(ModTiers.TEST_TIER_TOOLS,
+                    1,
+                    2.0f,
+                    10.0f,
+                    2.5f,
+                    props()
+            )
     );
     /*
     End of Tools & Weapons
