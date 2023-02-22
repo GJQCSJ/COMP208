@@ -2,24 +2,17 @@ package com.example.examplemod.item;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
-import com.example.examplemod.item.custom.ExampleReachItem;
+import com.example.examplemod.item.custom.GreatSwordItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
-import com.example.examplemod.util.ModTags;
-import net.minecraft.client.gui.font.glyphs.BakedGlyph;
-import net.minecraft.client.renderer.EffectInstance;
-import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
-import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import java.util.function.Supplier;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -61,8 +54,8 @@ public class ModItems {
             )
 
     );
-    public static final RegistryObject<ExampleReachItem> GREAT_SWORD = ITEMS.register("great_sword",
-            () -> new ExampleReachItem(ModTiers.TEST_TIER_TOOLS,
+    public static final RegistryObject<GreatSwordItem> GREAT_SWORD = ITEMS.register("great_sword",
+            () -> new GreatSwordItem(ModTiers.TEST_TIER_TOOLS,
                     1,
                     2.0f,
                     10.0f,
