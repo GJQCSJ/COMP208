@@ -26,9 +26,9 @@ public class ModConfiguredFeatures {
             Suppliers.memoize(
                     () -> List.of(
                             OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES,
-                                    ModBlocks.TEST_BLOCK_ORE.get().defaultBlockState()),
+                                    ModBlocks.SPODUMENE_ORE.get().defaultBlockState()),
                             OreConfiguration.target(OreFeatures.DEEPSLATE_ORE_REPLACEABLES,
-                                    ModBlocks.TEST_BLOCK_ORE.get().defaultBlockState())
+                                    ModBlocks.SPODUMENE_ORE.get().defaultBlockState())
                     )
             );
 
@@ -36,7 +36,7 @@ public class ModConfiguredFeatures {
             Suppliers.memoize(
                     () -> List.of(
                             OreConfiguration.target(new BlockMatchTest(Blocks.END_STONE),
-                                    ModBlocks.TEST_BLOCK_ORE.get().defaultBlockState()
+                                    ModBlocks.SPODUMENE_ORE.get().defaultBlockState()
                             )
                     )
             );

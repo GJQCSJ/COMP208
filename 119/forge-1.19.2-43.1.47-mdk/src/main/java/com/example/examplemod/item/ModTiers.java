@@ -16,7 +16,7 @@ public class ModTiers {
             5,
             114,
             null,
-            () -> Ingredient.of(ModItems.TEST.get()
+            () -> Ingredient.of(ModItems.SPODUMENE.get()
                     /* This ingredient means the material required to repair the tool */
             )
     );
@@ -29,7 +29,7 @@ public class ModTiers {
                 SoundEvents.ARMOR_EQUIP_GENERIC,
                 1.2f,
                 0.7f,
-                () -> Ingredient.of(ModItems.TEST.get()
+                () -> Ingredient.of(ModItems.SPODUMENE.get()
                 )
         );
     }

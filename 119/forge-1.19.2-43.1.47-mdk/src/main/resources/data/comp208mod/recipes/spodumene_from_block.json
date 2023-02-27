@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "comp208mod:spodumene_block"
+    }
+  ],
+  "result": {
+    "item": "comp208mod:spodumene",
+    "count": 9
+  }
+
+}

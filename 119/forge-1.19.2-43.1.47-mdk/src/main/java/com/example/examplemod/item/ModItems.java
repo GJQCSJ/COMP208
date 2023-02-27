@@ -18,10 +18,12 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, comp208mod.MOD_ID);
 
-    public static final RegistryObject<Item> TEST = ITEMS.register("test_item",
+    public static final RegistryObject<Item> SPODUMENE = ITEMS.register("spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
-    public static final RegistryObject<Item> TEST2 = ITEMS.register("test_item2",
+    public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
+
+
     public static final RegistryObject<Item> TEST_ADV = ITEMS.register("test_advanced_item1",
             () -> new TestAdvanceItem(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
 

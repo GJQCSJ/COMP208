@@ -1,6 +1,7 @@
 {
-  "item.comp208mod.test_item": "Test item",
-  "item.comp208mod.test_item2": "Test item2",
+  "item.comp208mod.spodumene": "Spodumene",
+  "item.comp208mod.raw_spodumene": "Raw Spodumene",
+
 
   "item.comp208mod.test_advanced_item1": "Advanced item1",
 
@@ -23,8 +24,9 @@
   "itemGroup.comp208mod": "Test Group",
 
   "block.comp208mod.test_block_template": "Template Block",
-  "block.comp208mod.test_block_ore": "Test Ore Block",
-  "block.comp208mod.test_block": "Test Block",
+  "block.comp208mod.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
+  "block.comp208mod.spodumene_ore": "Spodumene Ore",
+  "block.comp208mod.spodumene_block": "Block of Spodumene",
 
   "block.comp208mod.custom_berry_crop": "Custom Berry Crops",
 

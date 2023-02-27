@@ -2,19 +2,16 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
     "###",
-    "#X#",
+    "###",
     "###"
   ],
   "key": {
     "#": {
-      "item": "comp208mod:test_item"
-    },
-    "X": {
-      "item": "comp208mod:test_item2"
+      "item": "comp208mod:spodumene"
     }
   },
   "result": {
     "count": 2,
-    "item": "comp208mod:test_block_template"
+    "item": "comp208mod:spodumene_block"
   }
 }
