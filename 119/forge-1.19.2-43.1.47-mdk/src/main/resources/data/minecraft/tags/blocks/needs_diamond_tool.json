@@ -1,8 +1,8 @@
 {
   "replace": false,
   "values": [
-
-
-
+    "comp208mod:spodumene_ore",
+    "comp208mod:spodumene_block",
+    "comp208mod:deepslate_spodumene_ore"
   ]
 }

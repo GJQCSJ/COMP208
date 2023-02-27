@@ -1,8 +1,8 @@
 package com.example.examplemod.item;
 
 import com.example.examplemod.base.ModArmorMaterial;
+import com.example.examplemod.block.ModBlocks;
 import net.minecraft.sounds.SoundEvents;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
@@ -10,12 +10,12 @@ import net.minecraftforge.common.ForgeTier;
 
 public class ModTiers {
     public static final Tier TEST_TIER_TOOLS = new ForgeTier(
-            2,
+            4,
             893,
             2.0f,
-            5,
+            5.0f,
             114,
-            null,
+            ModBlocks.Tags.NEEDS_DIAMOND_TOOL,
             () -> Ingredient.of(ModItems.SPODUMENE.get()
                     /* This ingredient means the material required to repair the tool */
             )

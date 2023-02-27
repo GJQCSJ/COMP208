@@ -6,6 +6,9 @@ import com.example.examplemod.block.custom.JumpBlock;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
 import com.example.examplemod.item.ModItems;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
@@ -19,7 +22,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
 import java.util.function.Supplier;
 
 public class ModBlocks {
@@ -98,6 +100,17 @@ public class ModBlocks {
             String name, RegistryObject<T> block, CreativeModeTab tab){
         return ModItems.ITEMS.register(
                 name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+    }
+
+    public static class Tags {
+        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = create("mineable/needs_diamond_tool");
+
+        private static TagKey<Block> create(String location){
+            return BlockTags.create(new ResourceLocation(comp208mod.MOD_ID, location));
+        }
+        private static TagKey<Block> createForge(String location){
+            return BlockTags.create(new ResourceLocation("forge", location));
+        }
     }
 
 
