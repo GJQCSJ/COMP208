@@ -12,7 +12,7 @@ public class ModTiers {
     public static final Tier TEST_TIER_TOOLS = new ForgeTier(
             4,
             893,
-            2.0f,
+            12.0f,
             5.0f,
             114,
             ModBlocks.Tags.NEEDS_DIAMOND_TOOL,

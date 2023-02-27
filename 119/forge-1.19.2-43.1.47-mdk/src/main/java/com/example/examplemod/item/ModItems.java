@@ -3,16 +3,23 @@ package com.example.examplemod.item;
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.custom.GreatSwordItem;
+import com.example.examplemod.item.custom.MultiPurposeToolItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
+import static com.example.examplemod.comp208mod.MOD_ID;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -150,7 +157,15 @@ public class ModItems {
     End of ArmorSuit items
     */
 
-
+    /* Register of multi-tool */
+    public static final RegistryObject<MultiPurposeToolItem> MULTI_TOOL_SPODUMENE = ITEMS.register("spodumene_multi_tool",
+            () -> new MultiPurposeToolItem(
+                    ModTiers.TEST_TIER_TOOLS,
+                    2.0f,
+                    0.6f,
+                    props()
+            )
+    );
     public static void register(IEventBus eventBus){
         ITEMS.register(eventBus);
     }
