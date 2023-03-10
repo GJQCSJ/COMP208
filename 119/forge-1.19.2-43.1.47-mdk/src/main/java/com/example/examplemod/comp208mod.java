@@ -2,6 +2,7 @@ package com.example.examplemod;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;
+import com.example.examplemod.message.ModNetworking;
 import com.example.examplemod.util.ModItemProperties;
 import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
@@ -59,7 +60,9 @@ public class comp208mod {
 //    }
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-
+        event.enqueueWork( () -> {
+            ModNetworking.register();
+        });
     }
     private void clientSetup(final FMLClientSetupEvent event){
         ModItemProperties.addCustomItemProperties();

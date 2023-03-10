@@ -1,6 +1,8 @@
 package com.example.examplemod.event;
 
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.message.ModNetworking;
+import com.example.examplemod.message.packet.BasicPacket;
 import com.example.examplemod.util.KeyBindings;
 import net.minecraft.client.Minecraft;
 import net.minecraft.network.chat.Component;
@@ -16,7 +18,7 @@ public class ClientEvents {
         @SubscribeEvent
         public static void onKeyInput(InputEvent.Key event) {
             if(KeyBindings.DRINKING_KEY.consumeClick()) {
-                Minecraft.getInstance().player.sendSystemMessage(Component.literal("Pressed a Key!"));
+                ModNetworking.sentToServer(new BasicPacket());
             }
         }
     }

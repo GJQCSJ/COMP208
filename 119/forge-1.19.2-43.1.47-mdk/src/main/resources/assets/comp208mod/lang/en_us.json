@@ -12,6 +12,9 @@
 
   "item.comp208mod.test_sword": "Sword1",
   "item.comp208mod.test_pickaxe": "Pickaxe1",
+  "item.comp208mod.test_axe": "Axe1",
+  "item.comp208mod.test_hoe": "Hoe1",
+  "item.comp208mod.test_shovel": "Shovel1",
   "item.comp208mod.spodumene_multi_tool": "Spodumene Multi-tool",
   "item.comp208mod.great_sword": "Great Sword",
 
@@ -35,5 +38,8 @@
   "block.comp208mod.block_custom_lamp": "Custom Lamp Block",
 
   "key.category.comp208mod.custom": "Comp208 Mod",
-  "key.comp208mod.drink_water": "Drink Water"
+  "key.comp208mod.drink_water": "Drink Water",
+
+  "message.comp208mod.drink_water": "Drinking Water",
+  "message.comp208mod.no_water": "No Water Nearby"
 }

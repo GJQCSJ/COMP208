@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "A": {
+      "item": "comp208mod:test_axe"
+    },
+    "B": {
+      "item": "comp208mod:test_pickaxe"
+    },
+    "#": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "  B",
+    " # ",
+    "A  "
+  ],
+  "result": {
+    "item": "comp208mod:spodumene_multi_tool"
+  }
+}

@@ -71,6 +71,7 @@ public class GreatSwordItem extends SwordItem {
         pPlayer.startUsingItem(pHand);
         return InteractionResultHolder.consume(itemstack);
     }
+    @Override
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.BLOCK;
     }

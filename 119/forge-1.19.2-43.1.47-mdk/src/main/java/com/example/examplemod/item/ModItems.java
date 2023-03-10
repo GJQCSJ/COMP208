@@ -44,7 +44,7 @@ public class ModItems {
     public static final RegistryObject<SwordItem> TEST_SWORD = ITEMS.register("test_sword",
             () -> new SwordItem(
                     ModTiers.TEST_TIER_TOOLS,
-                    8,
+                    7,
                     4.0f,
                     props()
             )
@@ -54,6 +54,33 @@ public class ModItems {
                     ModTiers.TEST_TIER_TOOLS,
                     2,
                     3.5f,
+                    props()
+            )
+    );
+
+    public static final RegistryObject<AxeItem> TEST_AXE = ITEMS.register("test_axe",
+            () -> new AxeItem(
+                    ModTiers.TEST_TIER_TOOLS,
+                    9,
+                    3.0f,
+                    props()
+            )
+    );
+
+    public static final RegistryObject<HoeItem> TEST_HOE = ITEMS.register("test_hoe",
+            () -> new HoeItem(
+                    ModTiers.TEST_TIER_TOOLS,
+                    2,
+                    4.0f,
+                    props()
+            )
+    );
+
+    public static final RegistryObject<ShovelItem> TEST_SHOVEL = ITEMS.register("test_shovel",
+            () -> new ShovelItem(
+                    ModTiers.TEST_TIER_TOOLS,
+                    2,
+                    4.0f,
                     props()
             )
     );
