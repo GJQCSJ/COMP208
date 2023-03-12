@@ -2,6 +2,8 @@ package com.example.examplemod.item;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.block.*;
+import com.example.examplemod.setup.ModSetup;
 import com.example.examplemod.item.custom.GreatSwordItem;
 import com.example.examplemod.item.custom.MultiPurposeToolItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
@@ -25,6 +27,15 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, comp208mod.MOD_ID);
 
+    public static final Item.Properties ITEM_PROPERTIES = new Item.Properties().tab(ModCreativeModeTab.Test_Demo);
+
+    // This fromBlock() will auto assign the properties of block to the item
+    public static <B extends Block>RegistryObject<Item> fromBlock(RegistryObject<B> block){
+        return ITEMS.register(block.getId().getPath(), () -> new BlockItem(block.get(), ITEM_PROPERTIES));
+    }
+
+
+    public static final RegistryObject<Item> AUTO_TEST_ITEM = fromBlock(ModBlocks.AUTO_TEST_BLOCK);
     public static final RegistryObject<Item> SPODUMENE = ITEMS.register("spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",

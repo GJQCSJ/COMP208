@@ -1,5 +1,6 @@
 package com.example.examplemod.block;
 
+import com.example.examplemod.setup.Registration;
 import com.example.examplemod.block.custom.BerryCropBlock;
 import com.example.examplemod.block.custom.CustomLampBlock;
 import com.example.examplemod.block.custom.JumpBlock;
@@ -31,6 +32,10 @@ public class ModBlocks {
     * Block itself -> block class -> a type of the block */
     public static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
+
+    public static final BlockBehaviour.Properties BLOCK_PROPERTIES = BlockBehaviour.Properties.of(Material.STONE).strength(2f).requiresCorrectToolForDrops();
+    public static final RegistryObject<Block> AUTO_TEST_BLOCK =
+            BLOCKS.register("auto_json_testing_block", () -> new Block(BLOCK_PROPERTIES));
 
     public static final RegistryObject<Block> TEMPLATE_BLOCK =registerBlock("test_block_template",
             () -> new Block(BlockBehaviour.Properties.of(Material.STONE).strength(1f)),
