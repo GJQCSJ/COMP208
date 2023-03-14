@@ -2,6 +2,7 @@ package com.example.examplemod.datagen;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.util.ModTags;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.BlockTagsProvider;
 import net.minecraft.tags.BlockTags;
@@ -26,6 +27,10 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.AUTO_TEST_BLOCK.get())
+                .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
+                .add(ModBlocks.SPODUMENE_ORE.get())
+                .add(ModBlocks.SPODUMENE_BLOCK.get());
+        tag(ModTags.SPODUMENE_ORE_TIER)
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_BLOCK.get());

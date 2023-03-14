@@ -1,7 +1,7 @@
 package com.example.examplemod.item;
 
 import com.example.examplemod.base.ModArmorMaterial;
-import com.example.examplemod.block.ModBlocks;
+import com.example.examplemod.util.ModTags;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Tier;
@@ -15,8 +15,8 @@ public class ModTiers {
             12.0f,
             5.0f,
             114,
-            ModBlocks.Tags.NEEDS_DIAMOND_TOOL,
-            () -> Ingredient.of(ModItems.SPODUMENE.get()
+            ModTags.SPODUMENE_ORE_TIER,
+            () -> Ingredient.of(ModItems.SPODUMENE_IGNOT.get()
                     /* This ingredient means the material required to repair the tool */
             )
     );
@@ -29,7 +29,7 @@ public class ModTiers {
                 SoundEvents.ARMOR_EQUIP_GENERIC,
                 1.2f,
                 0.7f,
-                () -> Ingredient.of(ModItems.SPODUMENE.get()
+                () -> Ingredient.of(ModItems.SPODUMENE_IGNOT.get()
                 )
         );
     }

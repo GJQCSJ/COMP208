@@ -107,16 +107,16 @@ public class ModBlocks {
                 name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
-    public static class Tags {
-        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = create("mineable/needs_diamond_tool");
-
-        private static TagKey<Block> create(String location){
-            return BlockTags.create(new ResourceLocation(comp208mod.MOD_ID, location));
-        }
-        private static TagKey<Block> createForge(String location){
-            return BlockTags.create(new ResourceLocation("forge", location));
-        }
-    }
+//    public static class Tags {
+//        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = create("mineable/needs_diamond_tool");
+//
+//        private static TagKey<Block> create(String location){
+//            return BlockTags.create(new ResourceLocation(comp208mod.MOD_ID, location));
+//        }
+//        private static TagKey<Block> createForge(String location){
+//            return BlockTags.create(new ResourceLocation("forge", location));
+//        }
+//    }
 
 
     public static void register(IEventBus eventBus){

@@ -5,9 +5,6 @@ import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.fml.common.Mod;
-
-import static com.example.examplemod.comp208mod.TAB_NAME;
 
 public class ModLanguageProvider extends LanguageProvider {
     public  ModLanguageProvider(DataGenerator generator, String locale){
@@ -25,7 +22,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.JUMP_BLOCK.get(), "Jump Block");
         add(ModBlocks.SPODUMENE_BLOCK.get(), "Block of Spodumene");
         add(ModBlocks.SPODUMENE_ORE.get(), "Spodumene Ore");
-        add(ModItems.SPODUMENE.get(), "Spodumene");
+        add(ModItems.SPODUMENE_IGNOT.get(), "Spodumene ignot");
         add(ModItems.RAW_SPODUMENE.get(), "Raw Spodumene");
         add(ModItems.TEST_ADV.get(), "Advanced item1");
         add(ModItems.TEST_SWORD.get(), "Sword1");

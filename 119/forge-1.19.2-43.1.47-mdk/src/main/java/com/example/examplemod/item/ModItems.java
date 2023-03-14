@@ -2,14 +2,9 @@ package com.example.examplemod.item;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
-import com.example.examplemod.block.*;
-import com.example.examplemod.setup.ModSetup;
 import com.example.examplemod.item.custom.GreatSwordItem;
 import com.example.examplemod.item.custom.MultiPurposeToolItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -20,8 +15,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
-
-import static com.example.examplemod.comp208mod.MOD_ID;
 
 public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
@@ -36,7 +29,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> AUTO_TEST_ITEM = fromBlock(ModBlocks.AUTO_TEST_BLOCK);
-    public static final RegistryObject<Item> SPODUMENE = ITEMS.register("spodumene",
+    public static final RegistryObject<Item> SPODUMENE_IGNOT = ITEMS.register("spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
