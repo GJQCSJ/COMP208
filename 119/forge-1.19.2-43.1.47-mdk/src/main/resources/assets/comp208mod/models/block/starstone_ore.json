@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "comp208mod:block/starstone_ore"
+  }
+}
