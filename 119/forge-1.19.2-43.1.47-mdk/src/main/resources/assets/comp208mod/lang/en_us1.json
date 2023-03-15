@@ -2,6 +2,8 @@
   "item.comp208mod.spodumene": "Spodumene",
   "item.comp208mod.raw_spodumene": "Raw Spodumene",
 
+  "item.comp208mod.starstone": "Starstone",
+  "item.comp208mod.starstone_raw": "Raw Starstone",
 
   "item.comp208mod.test_advanced_item1": "Advanced item1",
 
@@ -31,6 +33,9 @@
   "block.comp208mod.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
   "block.comp208mod.spodumene_ore": "Spodumene Ore",
   "block.comp208mod.spodumene_block": "Block of Spodumene",
+  "block.comp208mod.deepslate_starstone_ore": "Deepslate Starstone Ore",
+  "block.comp208mod.starstone_ore": "Starstone Ore",
+  "block.comp208mod.starstone_block": "Block of Starstone",
 
   "block.comp208mod.custom_berry_crop": "Custom Berry Crops",
 
