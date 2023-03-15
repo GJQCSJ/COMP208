@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "comp208mod:starstone"
+    }
+  },
+  "result": {
+    "count": 1,
+    "item": "comp208mod:starstone_block"
+  }
+}

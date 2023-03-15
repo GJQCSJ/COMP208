@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 280,
+  "experience": 1.2,
+  "group": "starstone",
+  "ingredient": {
+    "item": "comp208mod:starstone_raw"
+  },
+  "result": "comp208mod:starstone"
+}

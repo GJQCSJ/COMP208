@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "comp208mod:starstone_block"
+    }
+  ],
+  "result": {
+    "item": "comp208mod:starstone",
+    "count": 9
+  }
+
+}
