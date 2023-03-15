@@ -1,9 +1,9 @@
 {
   "replace": false,
   "values": [
-    "comp208mod:red_maple_log",
-    "comp208mod:red_maple_wood",
-    "comp208mod:stripped_red_maple_log",
-    "comp208mod:stripped_red_maple_wood"
+    "comp208mod:blue_maple_log",
+    "comp208mod:blue_maple_wood",
+    "comp208mod:stripped_blue_maple_log",
+    "comp208mod:stripped_blue_maple_wood"
   ]
 }
