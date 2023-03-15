@@ -1,5 +1,6 @@
 package com.example.examplemod.block;
 
+import com.example.examplemod.block.custom.ModFlammableRotatedPillarBlock;
 import com.example.examplemod.setup.Registration;
 import com.example.examplemod.block.custom.BerryCropBlock;
 import com.example.examplemod.block.custom.CustomLampBlock;
@@ -7,6 +8,9 @@ import com.example.examplemod.block.custom.JumpBlock;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
 import com.example.examplemod.item.ModItems;
+import com.example.examplemod.world.feature.tree.BlueMapleTreeGrower;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
@@ -15,8 +19,11 @@ import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.DropExperienceBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -92,6 +99,66 @@ public class ModBlocks {
                     .strength(6F)
             ),
                     ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> BLUE_MAPLE_LOG = registerBlock("blue_maple_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(Blocks.OAK_LOG).requiresCorrectToolForDrops()), ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> BLUE_MAPLE_WOOD = registerBlock("blue_maple_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(Blocks.OAK_WOOD).requiresCorrectToolForDrops()), ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> STRIPPED_BLUE_MAPLE_LOG = registerBlock("stripped_blue_maple_log",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(Blocks.STRIPPED_OAK_LOG).requiresCorrectToolForDrops()), ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> STRIPPED_BLUE_MAPLE_WOOD = registerBlock("stripped_blue_maple_wood",
+            () -> new ModFlammableRotatedPillarBlock(BlockBehaviour.Properties
+                    .copy(Blocks.STRIPPED_OAK_WOOD).requiresCorrectToolForDrops()), ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> BLUE_MAPLE_PLANKS = registerBlock("blue_maple_planks",
+            () -> new Block(BlockBehaviour.Properties
+                    .copy(Blocks.OAK_PLANKS).requiresCorrectToolForDrops()) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 5;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 20;
+                }
+            }, ModCreativeModeTab.Test_Demo);
+
+
+    public static final RegistryObject<Block> BLUE_MAPLE_LEAVES = registerBlock("blue_maple_leaves",
+            () -> new LeavesBlock(BlockBehaviour.Properties
+                    .copy(Blocks.OAK_LEAVES).requiresCorrectToolForDrops()) {
+                @Override
+                public boolean isFlammable(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return true;
+                }
+
+                @Override
+                public int getFlammability(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 30;
+                }
+
+                @Override
+                public int getFireSpreadSpeed(BlockState state, BlockGetter level, BlockPos pos, Direction direction) {
+                    return 60;
+                }
+            }, ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> BLUE_MAPLE_SAPLING = registerBlock("blue_maple_sapling",
+            () -> new SaplingBlock(new BlueMapleTreeGrower(),
+                    BlockBehaviour.Properties.copy(Blocks.OAK_SAPLING)), ModCreativeModeTab.Test_Demo);
+
 
     public static final RegistryObject<Block> CUSTOM_LAMP = registerBlock("block_custom_lamp",
             () -> new CustomLampBlock(BlockBehaviour.Properties

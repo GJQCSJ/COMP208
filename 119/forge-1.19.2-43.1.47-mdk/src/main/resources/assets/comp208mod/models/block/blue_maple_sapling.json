@@ -1,0 +1,7 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "comp208mod:block/blue_maple_sapling"
+  },
+  "render_type": "cutout"
+}
