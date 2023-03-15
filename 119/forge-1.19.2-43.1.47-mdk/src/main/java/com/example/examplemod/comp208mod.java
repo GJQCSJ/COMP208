@@ -10,6 +10,8 @@ import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.ForgeMod;
 import net.minecraftforge.common.MinecraftForge;
@@ -62,6 +64,7 @@ public class comp208mod {
     private void modSetup(final FMLCommonSetupEvent event)
     {
         event.enqueueWork( () -> {
+            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.JASMINE.getId(), ModBlocks.POTTED_JASMINE);
             ModNetworking.register();
         });
     }

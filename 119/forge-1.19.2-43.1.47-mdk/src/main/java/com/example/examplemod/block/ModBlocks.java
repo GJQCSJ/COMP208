@@ -11,12 +11,11 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -92,6 +91,16 @@ public class ModBlocks {
             )
     );
 
+    public static final RegistryObject<Block> JASMINE = registerBlock("jasmine",
+            () -> new FlowerBlock(MobEffects.GLOWING, 4,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)
+            ), ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> POTTED_JASMINE = BLOCKS.register("potted_jasime",
+            () -> new FlowerPotBlock(() ->((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.JASMINE,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)
+            )
+    );
 
     private static <T extends Block> RegistryObject<T> registerBlock
             (String name, Supplier<T> block, CreativeModeTab tab){
@@ -106,6 +115,9 @@ public class ModBlocks {
         return ModItems.ITEMS.register(
                 name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
+
+
+
 
 //    public static class Tags {
 //        public static final TagKey<Block> NEEDS_DIAMOND_TOOL = create("mineable/needs_diamond_tool");
