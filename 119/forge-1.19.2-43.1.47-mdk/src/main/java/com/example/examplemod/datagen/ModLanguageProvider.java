@@ -49,6 +49,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.BLUE_MAPLE_WOOD.get(), "Blue Maple Wood");
         add(ModBlocks.STRIPPED_BLUE_MAPLE_LOG.get(), "Stripped Blue Maple Log");
         add(ModBlocks.STRIPPED_BLUE_MAPLE_WOOD.get(), "Stripped Blue Maple Wood");
+        add(ModBlocks.JASMINE.get(), "Jasmine");
+        add(ModBlocks.POTTED_JASMINE.get(), "Potted Jasmine");
 
 //        add(ModItems.AUTO_TEST_ITEM.get(), "Auto json test");
     }
