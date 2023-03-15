@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/flower_pot_cross",
   "textures": {
-    "plant": "tutorialmod:block/jasmine"
+    "plant": "comp208mod:block/jasmine"
   },
   "render_type": "cutout"
 }

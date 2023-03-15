@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "tutorialmod:block/jasmine"
+    "layer0": "comp208mod:block/jasmine"
   }
 }
