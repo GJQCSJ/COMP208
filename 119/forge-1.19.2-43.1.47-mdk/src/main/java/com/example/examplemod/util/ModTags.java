@@ -13,4 +13,7 @@ import net.minecraftforge.common.Tags;
 public class ModTags {
     public static final TagKey<Block> SPODUMENE_ORE_TIER = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "spodumene_ore"));
     public static final TagKey<Item> SPODUMENE_ORE_ITEM_TIER = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "spodumene_ore"));
+    public static final TagKey<Block> STARSTONE_ORE_TIER = TagKey.create(Registry.BLOCK_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "starstone_ore"));
+    public static final TagKey<Item> STARONE_ORE_ITEM_TIER = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "starstone_item"));
+
 }

@@ -34,6 +34,9 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_BLOCK.get());
+        tag(ModTags.STARSTONE_ORE_TIER)
+                .add(ModBlocks.STARSTONE_BLOCK.get())
+                .add(ModBlocks.DEEPSLATE_STARSTONE_ORE.get());
     }
 
     @Override
