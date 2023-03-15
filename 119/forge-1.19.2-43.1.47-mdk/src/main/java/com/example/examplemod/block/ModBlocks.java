@@ -69,6 +69,24 @@ public class ModBlocks {
             ),
             ModCreativeModeTab.Test_Demo);
 
+    public static final RegistryObject<Block> STARSTONE_BLOCK = registerBlock("starstone_block",
+            () -> new Block(BlockBehaviour.Properties.of(Material.STONE).
+                    strength(10).requiresCorrectToolForDrops()),
+            ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> STARSTONE_ORE =registerBlock("starstone_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(10f).requiresCorrectToolForDrops(),
+                    UniformInt.of(9, 15)
+            ),
+            ModCreativeModeTab.Test_Demo);
+
+    public static final RegistryObject<Block> DEEPSLATE_STARSTONE_ORE =registerBlock("deepslate_starstone_ore",
+            () -> new DropExperienceBlock(BlockBehaviour.Properties.of(Material.STONE)
+                    .strength(10f).requiresCorrectToolForDrops(),
+                    UniformInt.of(9, 15)
+            ),
+            ModCreativeModeTab.Test_Demo);
     public static final RegistryObject<Block> JUMP_BLOCK = registerBlock("jump_block",
             () -> new JumpBlock(BlockBehaviour.Properties
                     .of(Material.LEAVES)

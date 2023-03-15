@@ -20,10 +20,15 @@ public class ModItemTags extends ItemTagsProvider {
         tag(Tags.Items.ORES)
                 .add(ModItems.AUTO_TEST_ITEM.get())
                 .add(Item.byBlock(ModBlocks.SPODUMENE_ORE.get()))
-                .add(Item.byBlock(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get()));
+                .add(Item.byBlock(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get()))
+                .add(Item.byBlock(ModBlocks.STARSTONE_ORE.get()))
+                .add(Item.byBlock(ModBlocks.DEEPSLATE_STARSTONE_ORE.get()));
         tag(ModTags.SPODUMENE_ORE_ITEM_TIER)
                 .add(Item.byBlock(ModBlocks.SPODUMENE_ORE.get()))
                 .add(Item.byBlock(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get()));
+        tag(ModTags.STARONE_ORE_ITEM_TIER)
+                .add(Item.byBlock(ModBlocks.DEEPSLATE_STARSTONE_ORE.get()))
+                .add(Item.byBlock(ModBlocks.STARSTONE_ORE.get()));
     }
 
     @Override

@@ -33,7 +33,11 @@ public class ModItems {
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
+    public static final RegistryObject<Item> STARSTONE = ITEMS.register("starstone",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
 
+    public static final RegistryObject<Item> STARSTONE_RAW = ITEMS.register("starstone_raw",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
 
     public static final RegistryObject<Item> TEST_ADV = ITEMS.register("test_advanced_item1",
             () -> new TestAdvanceItem(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));

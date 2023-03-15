@@ -40,9 +40,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.TEST_ARMOR_LEGGINGS.get(), "Leggings1");
         add(ModItems.TEST_ARMOR_BOOTS.get(), "Boots1");
         add(ModItems.MULTI_TOOL_SPODUMENE.get(), "Spodumene Multi-tool");
-
-
-
+        add(ModItems.STARSTONE_RAW.get(), "Starstone Raw");
 //        add(ModItems.AUTO_TEST_ITEM.get(), "Auto json test");
     }
 }

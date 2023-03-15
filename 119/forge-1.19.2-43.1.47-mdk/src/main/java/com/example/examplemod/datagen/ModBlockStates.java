@@ -20,6 +20,9 @@ public class ModBlockStates extends BlockStateProvider {
         simpleBlock(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get());
         simpleBlock(ModBlocks.SPODUMENE_BLOCK.get());
         simpleBlock(ModBlocks.TEMPLATE_BLOCK.get());
+        simpleBlock(ModBlocks.STARSTONE_ORE.get());
+        simpleBlock(ModBlocks.STARSTONE_BLOCK.get());
+        simpleBlock(ModBlocks.DEEPSLATE_STARSTONE_ORE.get());
     }
 
 //    private void
