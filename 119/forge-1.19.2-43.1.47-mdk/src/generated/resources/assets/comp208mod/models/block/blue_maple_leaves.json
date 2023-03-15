@@ -1,7 +1,6 @@
 {
-  "parent": "block/cube_all",
+  "parent": "minecraft:block/cube_all",
   "textures": {
     "all": "comp208mod:block/blue_maple_leaves"
-  },
-  "render_type": "cutout"
+  }
 }

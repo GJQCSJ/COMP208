@@ -24,6 +24,9 @@ public class ModItemModels extends ItemModelProvider {
         withExistingParent(ModBlocks.DEEPSLATE_STARSTONE_ORE.getId().getPath(), modLoc("block/deepslate_starstone_ore"));
         withExistingParent(ModBlocks.STARSTONE_BLOCK.getId().getPath(), modLoc("block/starstone_block"));
         withExistingParent(ModBlocks.STARSTONE_ORE.getId().getPath(), modLoc("block/starstone_ore"));
+        withExistingParent(ModBlocks.BLUE_MAPLE_LEAVES.getId().getPath(), modLoc("block/blue_maple_leaves"));
+        withExistingParent(ModBlocks.BLUE_MAPLE_PLANKS.getId().getPath(), modLoc("block/blue_maple_planks"));
+        withExistingParent(ModBlocks.SPODUMENE_BLOCK.getId().getPath(), modLoc("block/spodumene_block"));
 //        withExistingParent(ModItems.SPODUMENE.getId().getPath(), modLoc("item/spodumene"));
     }
 }

@@ -41,6 +41,7 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModItems.TEST_ARMOR_BOOTS.get(), "Boots1");
         add(ModItems.MULTI_TOOL_SPODUMENE.get(), "Spodumene Multi-tool");
         add(ModItems.STARSTONE_RAW.get(), "Starstone Raw");
+        add(ModBlocks.BLUE_MAPLE_LOG.get(), "Blue Maple Log");
 //        add(ModItems.AUTO_TEST_ITEM.get(), "Auto json test");
     }
 }

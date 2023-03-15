@@ -1,7 +1,7 @@
 {
   "variants": {
     "": {
-      "model": "tutorialmod:block/potted_jasmine"
+      "model": "comp208mod:block/potted_jasmine"
     }
   }
 }
