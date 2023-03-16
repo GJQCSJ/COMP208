@@ -1,0 +1,7 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "comp208mod:block/blue_maple_log_top",
+    "side": "comp208mod:block/blue_maple_log"
+  }
+}

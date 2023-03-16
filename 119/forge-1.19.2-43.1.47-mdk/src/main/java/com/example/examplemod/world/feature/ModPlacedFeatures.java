@@ -1,7 +1,10 @@
 package com.example.examplemod.world.feature;
 
+import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
 import net.minecraft.core.Registry;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
+import net.minecraft.data.worldgen.placement.VegetationPlacements;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.placement.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -39,6 +42,18 @@ public class ModPlacedFeatures {
                     )
             )
     );
+
+
+    public static final RegistryObject<PlacedFeature> BLUE_MAPLE_CHECKED = PLACED_FEATURES.register("blue_maple_checked",
+            () -> new PlacedFeature(ModConfiguredFeatures.BLUE_MAPLE.getHolder().get(),
+                    List.of(PlacementUtils.filteredByBlockSurvival(ModBlocks.BLUE_MAPLE_SAPLING.get()))));
+
+    public static final RegistryObject<PlacedFeature> BLUE_MAPLE_PLACED = PLACED_FEATURES.register("blue_maple_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.BLUE_MAPLE_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
+                    PlacementUtils.countExtra(3,0.1f,2))));
+
+
+
 
 
 
