@@ -115,6 +115,6 @@ public abstract class BasicLootTableProvider extends LootTableProvider {
 
     @Override
     public String getName() {
-        return "MyTutorial LootTables";
+        return "Mod LootTables";
     }
 }
