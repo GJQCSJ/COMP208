@@ -20,7 +20,8 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.AUTO_TEST_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())
-                .add(ModBlocks.SPODUMENE_BLOCK.get());
+                .add(ModBlocks.SPODUMENE_BLOCK.get())
+                .add(ModBlocks.MANA_EXTRACTOR_BLOCK.get());
         tag(Tags.Blocks.ORES)
                 .add(ModBlocks.AUTO_TEST_BLOCK.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())
@@ -29,7 +30,8 @@ public class ModBlockTags extends BlockTagsProvider {
                 .add(ModBlocks.AUTO_TEST_BLOCK.get())
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())
-                .add(ModBlocks.SPODUMENE_BLOCK.get());
+                .add(ModBlocks.SPODUMENE_BLOCK.get())
+                .add(ModBlocks.MANA_EXTRACTOR_BLOCK.get());
         tag(ModTags.SPODUMENE_ORE_TIER)
                 .add(ModBlocks.DEEPSLATE_SPODUMENE_ORE.get())
                 .add(ModBlocks.SPODUMENE_ORE.get())

@@ -15,7 +15,7 @@ public class DataGenerators {
         DataGenerator generator = event.getGenerator();
         generator.addProvider(event.includeServer(), new ModRecipes(generator));
         // LootTable generator is still under consideration
-//         generator.addProvider(event.includeServer(), new ModLootTables(generator));
+        generator.addProvider(event.includeServer(), new ModLootTables(generator));
         ModBlockTags blockTags = new ModBlockTags(generator, event.getExistingFileHelper());
         generator.addProvider(event.includeServer(), blockTags);
         generator.addProvider(event.includeServer(), new ModItemTags(generator, blockTags, event.getExistingFileHelper()));

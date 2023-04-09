@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "comp208mod:mana_extractor"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "spodumene": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "comp208mod:spodumene"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "spodumene",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "comp208mod:mana_extractor"
+    ]
+  }
+}

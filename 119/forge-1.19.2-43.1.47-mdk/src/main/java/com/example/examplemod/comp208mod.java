@@ -1,14 +1,21 @@
 package com.example.examplemod;
 
 import com.example.examplemod.block.ModBlocks;
+import com.example.examplemod.client.ExtractorRender;
+import com.example.examplemod.client.ExtractorScreen;
 import com.example.examplemod.item.ModItems;
 import com.example.examplemod.message.ModNetworking;
 import com.example.examplemod.setup.ClientSetup;
+import com.example.examplemod.setup.Config;
+import com.example.examplemod.setup.ModSetup;
 import com.example.examplemod.setup.Registration;
 import com.example.examplemod.util.ModItemProperties;
 import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
 import com.mojang.logging.LogUtils;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
@@ -33,7 +40,7 @@ import org.apache.logging.log4j.Logger;
 public class comp208mod {
     // Define mod id in a common place for everything to reference
     public static final String MOD_ID = "comp208mod";
-    public static final String TAB_NAME = "208project";
+//    public static final String TAB_NAME = "208project";
 
     // Directly reference a slf4j logger
 //    private static final Logger LOGGER = LogUtils.getLogger();
@@ -45,6 +52,8 @@ public class comp208mod {
         Registration.init();
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        Config.register();
+        ModSetup.setup();
 
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
@@ -53,6 +62,7 @@ public class comp208mod {
         modEventBus.addListener(this::clientSetup);
         /* Register setups */
         IEventBus modbus = FMLJavaModLoadingContext.get().getModEventBus();
+        modbus.addListener(ModSetup::init);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> () -> modbus.addListener(ClientSetup::init));
         MinecraftForge.EVENT_BUS.register(this);
     }
@@ -76,6 +86,12 @@ public class comp208mod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+//            event.enqueueWork(() -> {
+//                MenuScreens.register(ModBlocks.MANA_CONTAINER.get(), ExtractorScreen::new);
+////                ItemBlockRenderTypes.setRenderLayer(ModBlocks.MANA_EXTRACTOR_BLOCK.get(), RenderType.translucent());
+//                ExtractorRender.register();
+//            });
+//            MinecraftForge.EVENT_BUS.addListener(KeyInputHandler::onKeyInput);
         }
         @SubscribeEvent
         public static void onEntityAttributeModificationEvent(final EntityAttributeModificationEvent event) {

@@ -10,6 +10,7 @@
   "block.comp208mod.deepslate_spodumene_ore": "Deepslate Spodumene Ore",
   "block.comp208mod.jasmine": "Jasmine",
   "block.comp208mod.jump_block": "Jump Block",
+  "block.comp208mod.mana_extractor": "Extractor",
   "block.comp208mod.potted_jasime": "Potted Jasmine",
   "block.comp208mod.spodumene_block": "Block of Spodumene",
   "block.comp208mod.spodumene_ore": "Spodumene Ore",
@@ -34,5 +35,7 @@
   "item.comp208mod.test_leggings": "Leggings1",
   "item.comp208mod.test_pickaxe": "Pickaxe1",
   "item.comp208mod.test_shovel": "Shovel1",
-  "item.comp208mod.test_sword": "Sword1"
+  "item.comp208mod.test_sword": "Sword1",
+  "message.mana_extractor": "The extractor is extracting %s per tick",
+  "screen.mana_extractor": "Mana Extractor"
 }

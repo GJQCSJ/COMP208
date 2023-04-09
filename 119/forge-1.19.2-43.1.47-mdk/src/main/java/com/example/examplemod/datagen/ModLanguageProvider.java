@@ -7,6 +7,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 import net.minecraftforge.fml.common.Mod;
 
+import static com.example.examplemod.block.custom.ManaExtractor.MESSAGE_MANA_EXTRACTOR;
+import static com.example.examplemod.block.custom.ManaExtractor.SCREEN_MANA_EXTRACTOR;
+
 public class ModLanguageProvider extends LanguageProvider {
     public  ModLanguageProvider(DataGenerator generator, String locale){
         super(generator, comp208mod.MOD_ID, locale);
@@ -51,6 +54,10 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.STRIPPED_BLUE_MAPLE_WOOD.get(), "Stripped Blue Maple Wood");
         add(ModBlocks.JASMINE.get(), "Jasmine");
         add(ModBlocks.POTTED_JASMINE.get(), "Potted Jasmine");
+        add(ModBlocks.MANA_EXTRACTOR_BLOCK.get(), "Extractor");
+        add(MESSAGE_MANA_EXTRACTOR, "The extractor is extracting %s per tick");
+        add(SCREEN_MANA_EXTRACTOR, "Mana Extractor");
+
 
 //        add(ModItems.AUTO_TEST_ITEM.get(), "Auto json test");
     }

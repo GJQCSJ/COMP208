@@ -28,7 +28,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
-import static com.example.examplemod.block.ModBlocks.BLOCKS;
+//import static com.example.examplemod.block.ModBlocks.BLOCKS;
 import static com.example.examplemod.comp208mod.MOD_ID;
 import static com.example.examplemod.item.ModItems.ITEMS;
 

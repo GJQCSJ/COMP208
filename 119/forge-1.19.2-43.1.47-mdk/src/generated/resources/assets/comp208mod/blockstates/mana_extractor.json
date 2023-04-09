@@ -1,0 +1,119 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/main"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff"
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff",
+        "x": 180
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff",
+        "x": 90
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff",
+        "x": 270
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleoff",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon"
+      },
+      "when": {
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon",
+        "x": 180
+      },
+      "when": {
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon",
+        "x": 90
+      },
+      "when": {
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon",
+        "x": 270
+      },
+      "when": {
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon",
+        "x": 90,
+        "y": 90
+      },
+      "when": {
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "comp208mod:block/mana_extractor/singleon",
+        "x": 90,
+        "y": 270
+      },
+      "when": {
+        "powered": "true"
+      }
+    }
+  ]
+}
