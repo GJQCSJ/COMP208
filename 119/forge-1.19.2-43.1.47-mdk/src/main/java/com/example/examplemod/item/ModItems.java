@@ -16,6 +16,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
+
 import static com.example.examplemod.block.ModBlocks.MANA_EXTRACTOR_BLOCK;
 
 public class ModItems {
@@ -31,7 +32,11 @@ public class ModItems {
     public static final RegistryObject<Item> MANA_EXTRACTOR_ITEM = fromBlock(MANA_EXTRACTOR_BLOCK);
 
 
+
     public static final RegistryObject<Item> AUTO_TEST_ITEM = fromBlock(ModBlocks.AUTO_TEST_BLOCK);
+    public static final RegistryObject<Item> GENERATED_ITEM = ITEMS.register("generated_item",
+            () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
+    public static final RegistryObject<Item> GENERATOR_ITEM = fromBlock(ModBlocks.GENERATOR);
     public static final RegistryObject<Item> SPODUMENE_IGNOT = ITEMS.register("spodumene",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> RAW_SPODUMENE = ITEMS.register("raw_spodumene",

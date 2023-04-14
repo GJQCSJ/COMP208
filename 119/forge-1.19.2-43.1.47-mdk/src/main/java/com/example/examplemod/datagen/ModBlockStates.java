@@ -9,8 +9,11 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.CustomLoaderBuilder;
 import net.minecraftforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.minecraftforge.common.data.ExistingFileHelper;
+
+import static com.example.examplemod.client.GeneratorModelLoader.GENERATOR_LOADER;
 
 public class ModBlockStates extends BlockStateProvider {
     public ModBlockStates(DataGenerator generatorIn, ExistingFileHelper helper){
@@ -20,6 +23,7 @@ public class ModBlockStates extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels(){
         registerExtractor();
+        registerGenerator();
 
         simpleBlock(ModBlocks.AUTO_TEST_BLOCK.get());
         simpleBlock(ModBlocks.SPODUMENE_ORE.get());
@@ -63,6 +67,15 @@ public class ModBlockStates extends BlockStateProvider {
         frame.renderType("translucent");
 
         createExtractorModel(ModBlocks.MANA_EXTRACTOR_BLOCK.get(), frame);
+    }
+
+    private void registerGenerator(){
+        // Using CustomLoaderBuilder we can define a JSON file for our model that will use our baked model
+        BlockModelBuilder generatorModel = models().getBuilder(ModBlocks.GENERATOR.getId().getPath())
+                .parent(models().getExistingFile(mcLoc("cube")))
+                .customLoader((blockModelBuilder, helper) -> new CustomLoaderBuilder<BlockModelBuilder>(GENERATOR_LOADER, blockModelBuilder, helper) { })
+                .end();
+        directionalBlock(ModBlocks.GENERATOR.get(), generatorModel);
     }
 
     private void floatingCube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz){

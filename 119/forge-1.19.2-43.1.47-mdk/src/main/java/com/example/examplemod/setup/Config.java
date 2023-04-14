@@ -1,5 +1,6 @@
 package com.example.examplemod.setup;
 
+import com.example.examplemod.block.custom.GeneratorConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
@@ -14,6 +15,7 @@ public class Config {
     private static void registerServerConfigs(){
         ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
         ManaConfig.registerServerConfig(SERVER_BUILDER);
+        GeneratorConfig.registerServerConfig(SERVER_BUILDER);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
     }
 
