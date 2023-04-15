@@ -1,6 +1,5 @@
 package com.example.examplemod.block.custom;
 
-import com.example.examplemod.util.CustomEnergyContainer;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -34,14 +33,14 @@ import net.minecraftforge.network.NetworkHooks;
 import javax.annotation.Nullable;
 import java.util.List;
 
-public class ManaExtractor extends Block implements EntityBlock {
+public class Powerplant extends Block implements EntityBlock {
     public static final String MESSAGE_MANA_EXTRACTOR = "message.mana_extractor";
     public static final String SCREEN_MANA_EXTRACTOR = "screen.mana_extractor";
 
     // This block entity needs to be smaller to make sure all faces will not be hidden
     private static final VoxelShape RENDER_SHAPE = Shapes.box(0.1, 0.1, 0.1, 0.9, 0.9, 0.9);
 
-    public ManaExtractor(){
+    public Powerplant(){
         super(Properties.of(Material.STONE)
                 .sound(SoundType.STONE)
                 .strength(2.5f)
@@ -58,14 +57,14 @@ public class ManaExtractor extends Block implements EntityBlock {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable BlockGetter reader, List<Component> list, TooltipFlag flags){
-        list.add(Component.translatable(MESSAGE_MANA_EXTRACTOR, Integer.toString(ManaConfig.MANA_GEN.get()))
+        list.add(Component.translatable(MESSAGE_MANA_EXTRACTOR, Integer.toString(PowerplantConfig.MANA_GEN.get()))
                 .withStyle(ChatFormatting.GOLD));
     }
 
     @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos blockPos, BlockState state){
-        return new ManaBE(blockPos, state);
+        return new PowerplantBE(blockPos, state);
     }
 
     @Nullable
@@ -75,7 +74,7 @@ public class ManaExtractor extends Block implements EntityBlock {
             return null;
         }
         return (lvl, pos, blockState, t) -> {
-            if (t instanceof ManaBE tile){
+            if (t instanceof PowerplantBE tile){
                 tile.tickServer();
             }
         };
@@ -98,7 +97,7 @@ public class ManaExtractor extends Block implements EntityBlock {
     public InteractionResult use(BlockState statem, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult trace){
         if (!level.isClientSide){
             BlockEntity be = level.getBlockEntity(pos);
-            if (be instanceof ManaBE){
+            if (be instanceof PowerplantBE){
                 MenuProvider containerProvider = new MenuProvider() {
                     @Override
                     public Component getDisplayName() {
@@ -107,7 +106,7 @@ public class ManaExtractor extends Block implements EntityBlock {
 
                     @Override
                     public AbstractContainerMenu createMenu(int windowId, Inventory playerInventory, Player playerEntity){
-                        return new ManaContainer(windowId, pos, playerInventory, playerEntity);
+                        return new PowerplantContainer(windowId, pos, playerInventory, playerEntity);
                     }
                 };
                 NetworkHooks.openScreen((ServerPlayer) player, containerProvider, be.getBlockPos());

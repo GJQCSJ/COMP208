@@ -1,6 +1,6 @@
 package com.example.examplemod.client;
 
-import com.example.examplemod.block.custom.ManaContainer;
+import com.example.examplemod.block.custom.PowerplantContainer;
 import com.example.examplemod.comp208mod;
 import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.PoseStack;
@@ -10,10 +10,10 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
-public class ExtractorScreen extends AbstractContainerScreen<ManaContainer> {
+public class PowerplantScreen extends AbstractContainerScreen<PowerplantContainer> {
     private final ResourceLocation GUI = new ResourceLocation(comp208mod.MOD_ID, "textures/gui/mana_extractor_gui1.png");
 
-    public ExtractorScreen(ManaContainer container, Inventory inventory, Component name){
+    public PowerplantScreen(PowerplantContainer container, Inventory inventory, Component name){
         super(container, inventory, name);
     }
 

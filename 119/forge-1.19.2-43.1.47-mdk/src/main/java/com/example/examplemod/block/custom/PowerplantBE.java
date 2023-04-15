@@ -2,7 +2,6 @@ package com.example.examplemod.block.custom;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.util.CustomEnergyContainer;
-import com.example.examplemod.block.custom.ManaConfig;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
@@ -19,8 +18,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
-import net.minecraftforge.registries.ForgeRegistries;
-import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -28,7 +25,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 
 
-public class ManaBE extends BlockEntity {
+public class PowerplantBE extends BlockEntity {
     //This class is the actual one generating energy from consuming fuel items
     //So this class needs another container and tick which do the processing
     //Pipes may be implemented later, if there is still time
@@ -44,7 +41,7 @@ public class ManaBE extends BlockEntity {
     private final CustomEnergyContainer energyStorage = createEnergy();
     private final LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> energyStorage);
 
-    public ManaBE(BlockPos pos, BlockState state){
+    public PowerplantBE(BlockPos pos, BlockState state){
         super(ModBlocks.MANA_EXTRACTOR_BE.get(), pos, state);
     }
 
@@ -58,7 +55,7 @@ public class ManaBE extends BlockEntity {
     public void tickServer(){
         //If counter > 0, then consume the fuel and generate energy
         if (counter > 0){
-            energyStorage.addEnergy(ManaConfig.MANA_GEN.get());
+            energyStorage.addEnergy(PowerplantConfig.MANA_GEN.get());
             counter--;
             setChanged();
         }
@@ -90,7 +87,7 @@ public class ManaBE extends BlockEntity {
                     boolean doContinue = be.getCapability(ForgeCapabilities.ENERGY, direction.getOpposite()).map(
                             handler -> {
                                 if (handler.canReceive()){
-                                    int received = handler.receiveEnergy(Math.min(capacity.get(), ManaConfig.MANA_SEND.get()), false);
+                                    int received = handler.receiveEnergy(Math.min(capacity.get(), PowerplantConfig.MANA_SEND.get()), false);
                                     capacity.addAndGet(-received);
                                     energyStorage.consumeEnergy(received);
                                     setChanged();
@@ -155,7 +152,7 @@ public class ManaBE extends BlockEntity {
     }
 
     private CustomEnergyContainer createEnergy(){
-        return new CustomEnergyContainer(ManaConfig.MANA_CAP.get(), 0){
+        return new CustomEnergyContainer(PowerplantConfig.MANA_CAP.get(), 0){
             @Override
             protected void onEnergyChanged(){
                 setChanged();

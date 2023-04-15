@@ -5,10 +5,9 @@ import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
-import net.minecraftforge.fml.common.Mod;
 
-import static com.example.examplemod.block.custom.ManaExtractor.MESSAGE_MANA_EXTRACTOR;
-import static com.example.examplemod.block.custom.ManaExtractor.SCREEN_MANA_EXTRACTOR;
+import static com.example.examplemod.block.custom.Powerplant.MESSAGE_MANA_EXTRACTOR;
+import static com.example.examplemod.block.custom.Powerplant.SCREEN_MANA_EXTRACTOR;
 
 public class ModLanguageProvider extends LanguageProvider {
     public  ModLanguageProvider(DataGenerator generator, String locale){

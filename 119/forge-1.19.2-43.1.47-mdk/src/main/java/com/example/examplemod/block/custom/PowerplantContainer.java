@@ -19,12 +19,12 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.wrapper.InvWrapper;
 
-public class ManaContainer extends AbstractContainerMenu {
+public class PowerplantContainer extends AbstractContainerMenu {
     private final BlockEntity blockEntity;
     private final Player playerEntity;
     private final IItemHandler playerInventory;
 
-    public ManaContainer(int windowId, BlockPos pos, Inventory playerInventory, Player player){
+    public PowerplantContainer(int windowId, BlockPos pos, Inventory playerInventory, Player player){
         super(ModBlocks.MANA_CONTAINER.get(), windowId);
         blockEntity = player.getCommandSenderWorld().getBlockEntity(pos);
         this.playerEntity = player;

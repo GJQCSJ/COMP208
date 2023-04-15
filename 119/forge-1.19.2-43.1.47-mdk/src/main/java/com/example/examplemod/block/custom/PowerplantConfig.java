@@ -1,10 +1,8 @@
 package com.example.examplemod.block.custom;
 
-import net.minecraftforge.common.ForgeConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.capabilities.ForgeCapabilities;
 
-public class ManaConfig {
+public class PowerplantConfig {
     public static ForgeConfigSpec.IntValue MANA_CAP;
     public static ForgeConfigSpec.IntValue MANA_GEN;
     public static ForgeConfigSpec.IntValue MANA_SEND;

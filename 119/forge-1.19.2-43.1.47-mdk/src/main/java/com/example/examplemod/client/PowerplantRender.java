@@ -1,8 +1,8 @@
 package com.example.examplemod.client;
 
 import com.example.examplemod.block.ModBlocks;
-import com.example.examplemod.block.custom.ManaBE;
-import com.example.examplemod.block.custom.ManaConfig;
+import com.example.examplemod.block.custom.PowerplantBE;
+import com.example.examplemod.block.custom.PowerplantConfig;
 import com.example.examplemod.comp208mod;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -14,7 +14,6 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
-import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.client.renderer.texture.TextureAtlasSprite;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.inventory.InventoryMenu;
@@ -22,14 +21,14 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 
 import static java.lang.Boolean.TRUE;
 
-public class ExtractorRender implements BlockEntityRenderer<ManaBE> {
+public class PowerplantRender implements BlockEntityRenderer<PowerplantBE> {
     public static final ResourceLocation HALO = new ResourceLocation(comp208mod.MOD_ID, "effect/halo");
 
-    public ExtractorRender(BlockEntityRendererProvider.Context context){
+    public PowerplantRender(BlockEntityRendererProvider.Context context){
 
     }
     @Override
-    public void render(ManaBE mana_extractor, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int combinedLight, int combinedOverlay){
+    public void render(PowerplantBE mana_extractor, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int combinedLight, int combinedOverlay){
 
         Boolean powered = mana_extractor.getBlockState().getValue(BlockStateProperties.POWERED);
         if (TRUE != powered){
@@ -42,7 +41,7 @@ public class ExtractorRender implements BlockEntityRenderer<ManaBE> {
         if (s > 0.5f){
             s = 1.0f - s;
         }
-        float scale = 0.1f + s * (float)(double)ManaConfig.RENDER_SCALE.get();
+        float scale = 0.1f + s * (float)(double) PowerplantConfig.RENDER_SCALE.get();
 
         //Get texture from atlas
         TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(HALO);
@@ -65,6 +64,6 @@ public class ExtractorRender implements BlockEntityRenderer<ManaBE> {
     }
 
     public static void register(){
-        BlockEntityRenderers.register(ModBlocks.MANA_EXTRACTOR_BE.get(), ExtractorRender::new);
+        BlockEntityRenderers.register(ModBlocks.MANA_EXTRACTOR_BE.get(), PowerplantRender::new);
     }
 }

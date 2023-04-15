@@ -4,7 +4,7 @@ import com.example.examplemod.block.custom.GeneratorConfig;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
-import com.example.examplemod.block.custom.ManaConfig;
+import com.example.examplemod.block.custom.PowerplantConfig;
 public class Config {
     public static void register(){
         registerServerConfigs();
@@ -14,7 +14,7 @@ public class Config {
 
     private static void registerServerConfigs(){
         ForgeConfigSpec.Builder SERVER_BUILDER = new ForgeConfigSpec.Builder();
-        ManaConfig.registerServerConfig(SERVER_BUILDER);
+        PowerplantConfig.registerServerConfig(SERVER_BUILDER);
         GeneratorConfig.registerServerConfig(SERVER_BUILDER);
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, SERVER_BUILDER.build());
     }
@@ -26,7 +26,7 @@ public class Config {
 
     private static void registerClientConfigs(){
         ForgeConfigSpec.Builder CLIENT_BUILDER = new ForgeConfigSpec.Builder();
-        ManaConfig.registerClientConfig(CLIENT_BUILDER);
+        PowerplantConfig.registerClientConfig(CLIENT_BUILDER);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, CLIENT_BUILDER.build());
     }
 }

@@ -1,23 +1,17 @@
 package com.example.examplemod.block;
 
 import com.example.examplemod.block.custom.*;
-import com.example.examplemod.setup.Registration;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
-import com.example.examplemod.item.ModItems;
 import com.example.examplemod.world.feature.tree.BlueMapleTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.DropExperienceBlock;
@@ -29,14 +23,11 @@ import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.RegistryObject;
 
-import javax.annotation.Nullable;
 import java.util.function.Supplier;
 
 import static com.example.examplemod.item.ModItems.ITEMS;
-import static com.example.examplemod.item.ModItems.ITEM_PROPERTIES;
 
 public class ModBlocks {
 
@@ -47,11 +38,11 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
     private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, comp208mod.MOD_ID);
     private static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, comp208mod.MOD_ID);
-    public static final RegistryObject<ManaExtractor> MANA_EXTRACTOR_BLOCK = BLOCKS.register("mana_extractor", ManaExtractor::new);
-    public static final RegistryObject<BlockEntityType<ManaBE>> MANA_EXTRACTOR_BE = BLOCK_ENTITIES.register("mana_extractor",
-            () -> BlockEntityType.Builder.of(ManaBE::new, MANA_EXTRACTOR_BLOCK.get()).build(null));
-    public static final RegistryObject<MenuType<ManaContainer>> MANA_CONTAINER = MENU_TYPES.register("mana_extractor",
-            () -> IForgeMenuType.create(((windowId, inv, data) -> new ManaContainer(windowId, data.readBlockPos(), inv, inv.player))));
+    public static final RegistryObject<Powerplant> MANA_EXTRACTOR_BLOCK = BLOCKS.register("mana_extractor", Powerplant::new);
+    public static final RegistryObject<BlockEntityType<PowerplantBE>> MANA_EXTRACTOR_BE = BLOCK_ENTITIES.register("mana_extractor",
+            () -> BlockEntityType.Builder.of(PowerplantBE::new, MANA_EXTRACTOR_BLOCK.get()).build(null));
+    public static final RegistryObject<MenuType<PowerplantContainer>> MANA_CONTAINER = MENU_TYPES.register("mana_extractor",
+            () -> IForgeMenuType.create(((windowId, inv, data) -> new PowerplantContainer(windowId, data.readBlockPos(), inv, inv.player))));
 
     public static final RegistryObject<Generator> GENERATOR = BLOCKS.register("generator", Generator::new);
     public static final RegistryObject<BlockEntityType<GeneratorBE>> GENERATOR_BE = BLOCK_ENTITIES.register("generator", () -> BlockEntityType.Builder.of(GeneratorBE::new, GENERATOR.get()).build(null));
