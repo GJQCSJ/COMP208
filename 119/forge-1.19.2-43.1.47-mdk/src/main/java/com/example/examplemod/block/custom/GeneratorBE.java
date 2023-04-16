@@ -9,8 +9,10 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.NbtUtils;
 import net.minecraft.network.Connection;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.world.entity.item.ItemEntity;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
@@ -64,6 +66,15 @@ public class GeneratorBE extends BlockEntity {
 
     private final CustomEnergyContainer energy = createEnergyStorage();
     private final LazyOptional<IEnergyStorage> energyHandler = LazyOptional.of(() -> energy);
+
+    public static void spawnInWorld(Level level, BlockPos pos, ItemStack remaining) {
+        if (!remaining.isEmpty()) {
+            ItemEntity entityitem = new ItemEntity(level, pos.getX() + .5, pos.getY() + .5, pos.getZ() + .5, remaining);
+            entityitem.setPickUpDelay(40);
+            entityitem.setDeltaMovement(entityitem.getDeltaMovement().multiply(0, 1, 0));
+            level.addFreshEntity(entityitem);
+        }
+    }
 
     public GeneratorBE(BlockPos pos, BlockState state) {
         super(ModBlocks.GENERATOR_BE.get(), pos, state);
@@ -124,7 +135,7 @@ public class GeneratorBE extends BlockEntity {
             energy.consumeEnergy(GeneratorConfig.ENERGY_GENERATE.get());
             areWeGenerating = true;
             ItemStack output =ItemHandlerHelper.insertItem(outputItems, new ItemStack(generatingBlock.getBlock().asItem()), false);
-            Tools.spawnInWorld(level, worldPosition, output);
+            spawnInWorld(level, worldPosition, output);
         }
 //        for (int i = 0; i < inputItems.getSlots() ; i++) {
 //            ItemStack item = inputItems.getStackInSlot(i);
