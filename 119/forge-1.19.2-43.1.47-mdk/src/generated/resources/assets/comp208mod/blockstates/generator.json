@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "comp208mod:block/generator",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "comp208mod:block/generator",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "comp208mod:block/generator",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "comp208mod:block/generator",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "comp208mod:block/generator"
+    },
+    "facing=west": {
+      "model": "comp208mod:block/generator",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

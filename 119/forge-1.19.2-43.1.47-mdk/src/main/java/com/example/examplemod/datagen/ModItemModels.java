@@ -28,5 +28,7 @@ public class ModItemModels extends ItemModelProvider {
         withExistingParent(ModBlocks.BLUE_MAPLE_PLANKS.getId().getPath(), modLoc("block/blue_maple_planks"));
         withExistingParent(ModBlocks.SPODUMENE_BLOCK.getId().getPath(), modLoc("block/spodumene_block"));
 //        withExistingParent(ModItems.SPODUMENE.getId().getPath(), modLoc("item/spodumene"));
+        withExistingParent(ModItems.MANA_EXTRACTOR_ITEM.getId().getPath(), modLoc("block/mana_extractor/main"));
+
     }
 }

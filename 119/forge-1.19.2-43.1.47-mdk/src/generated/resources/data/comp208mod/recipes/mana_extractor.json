@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "comp208mod",
+  "key": {
+    "X": {
+      "item": "comp208mod:starstone"
+    },
+    "Y": {
+      "item": "comp208mod:spodumene"
+    },
+    "Z": {
+      "tag": "forge:obsidian"
+    }
+  },
+  "pattern": [
+    "XZX",
+    "ZXZ",
+    "YYY"
+  ],
+  "result": {
+    "item": "comp208mod:mana_extractor"
+  }
+}

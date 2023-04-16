@@ -1,0 +1,24 @@
+{
+  "elements": [
+    {
+      "faces": {
+        "down": {
+          "texture": "#single"
+        }
+      },
+      "from": [
+        3,
+        3,
+        3
+      ],
+      "to": [
+        13,
+        13,
+        13
+      ]
+    }
+  ],
+  "textures": {
+    "single": "comp208mod:block/mana_extractor_off"
+  }
+}

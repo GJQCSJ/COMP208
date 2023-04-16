@@ -1,5 +1,6 @@
 package com.example.examplemod.setup;
 
+import com.example.examplemod.item.ModItems;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -21,7 +22,7 @@ public class ModSetup {
     public static final CreativeModeTab ITEM_GROUP = new CreativeModeTab(TAB_NAME) {
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(Items.DIAMOND);
+            return new ItemStack(ModItems.SPODUMENE_IGNOT.get());
         }
     };
 

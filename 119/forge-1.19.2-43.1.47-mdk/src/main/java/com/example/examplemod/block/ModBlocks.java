@@ -1,44 +1,51 @@
 package com.example.examplemod.block;
 
-import com.example.examplemod.block.custom.ModFlammableRotatedPillarBlock;
-import com.example.examplemod.setup.Registration;
-import com.example.examplemod.block.custom.BerryCropBlock;
-import com.example.examplemod.block.custom.CustomLampBlock;
-import com.example.examplemod.block.custom.JumpBlock;
+import com.example.examplemod.block.custom.*;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.item.ModCreativeModeTab;
-import com.example.examplemod.item.ModItems;
 import com.example.examplemod.world.feature.tree.BlueMapleTreeGrower;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.resources.ResourceLocation;
-import net.minecraft.tags.BlockTags;
-import net.minecraft.tags.TagKey;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.common.extensions.IForgeMenuType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+
 import java.util.function.Supplier;
+
+import static com.example.examplemod.item.ModItems.ITEMS;
 
 public class ModBlocks {
 
     /*
     * Block inside the world -> blockstate
     * Block itself -> block class -> a type of the block */
-    public static final DeferredRegister<Block> BLOCKS =
+    private static final DeferredRegister<Block> BLOCKS =
             DeferredRegister.create(ForgeRegistries.BLOCKS, comp208mod.MOD_ID);
+    private static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITY_TYPES, comp208mod.MOD_ID);
+    private static final DeferredRegister<MenuType<?>> MENU_TYPES = DeferredRegister.create(ForgeRegistries.MENU_TYPES, comp208mod.MOD_ID);
+    public static final RegistryObject<Powerplant> MANA_EXTRACTOR_BLOCK = BLOCKS.register("mana_extractor", Powerplant::new);
+    public static final RegistryObject<BlockEntityType<PowerplantBE>> MANA_EXTRACTOR_BE = BLOCK_ENTITIES.register("mana_extractor",
+            () -> BlockEntityType.Builder.of(PowerplantBE::new, MANA_EXTRACTOR_BLOCK.get()).build(null));
+    public static final RegistryObject<MenuType<PowerplantContainer>> MANA_CONTAINER = MENU_TYPES.register("mana_extractor",
+            () -> IForgeMenuType.create(((windowId, inv, data) -> new PowerplantContainer(windowId, data.readBlockPos(), inv, inv.player))));
 
+    public static final RegistryObject<Generator> GENERATOR = BLOCKS.register("generator", Generator::new);
+    public static final RegistryObject<BlockEntityType<GeneratorBE>> GENERATOR_BE = BLOCK_ENTITIES.register("generator", () -> BlockEntityType.Builder.of(GeneratorBE::new, GENERATOR.get()).build(null));
     public static final BlockBehaviour.Properties BLOCK_PROPERTIES = BlockBehaviour.Properties.of(Material.STONE).strength(2f).requiresCorrectToolForDrops();
     public static final RegistryObject<Block> AUTO_TEST_BLOCK =
             BLOCKS.register("auto_json_testing_block", () -> new Block(BLOCK_PROPERTIES));
@@ -187,6 +194,10 @@ public class ModBlocks {
             )
     );
 
+
+
+//    public static final RegistryObject<>
+
     private static <T extends Block> RegistryObject<T> registerBlock
             (String name, Supplier<T> block, CreativeModeTab tab){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -197,7 +208,7 @@ public class ModBlocks {
 
     private static <T extends Block> RegistryObject<Item> registerBlockItem(
             String name, RegistryObject<T> block, CreativeModeTab tab){
-        return ModItems.ITEMS.register(
+        return ITEMS.register(
                 name, () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
     }
 
@@ -217,8 +228,9 @@ public class ModBlocks {
 
 
     public static void register(IEventBus eventBus){
-
         BLOCKS.register(eventBus);
+        BLOCK_ENTITIES.register(eventBus);
+        MENU_TYPES.register(eventBus);
     }
 
 //    private static <T extends Block> RegistryObject<T> AdvancedRegister(String name, Supplier<T> supplier,
