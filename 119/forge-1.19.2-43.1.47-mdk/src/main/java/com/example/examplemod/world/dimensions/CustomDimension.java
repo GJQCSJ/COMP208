@@ -10,6 +10,8 @@ import net.minecraft.world.level.dimension.DimensionType;
 public class CustomDimension {
     public static final ResourceKey<Level> CUSTOM_DIM = ResourceKey.create(Registry.DIMENSION_REGISTRY,
             new ResourceLocation(comp208mod.MOD_ID, "custom_dimension"));
+    public static final ResourceKey<Level> SKY_ISLANDS = ResourceKey.create(Registry.DIMENSION_REGISTRY,
+            new ResourceLocation(comp208mod.MOD_ID, "custom_dimension_sky"));
     public static void register(){
         Registry.register(Registry.CHUNK_GENERATOR, new ResourceLocation(comp208mod.MOD_ID, "custom_dimension_chunk"),
                 CustomChunkGenerator.CODEC);

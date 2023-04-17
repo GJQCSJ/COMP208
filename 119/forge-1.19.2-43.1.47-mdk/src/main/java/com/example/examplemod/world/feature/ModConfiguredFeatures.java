@@ -50,6 +50,8 @@ public class ModConfiguredFeatures {
                     )
             );
 
+
+
     public static final RegistryObject<ConfiguredFeature<?, ?>> TEST_BLOCK_ORE =
             CONFIGURED_FEATURES.register("test_block_ore",
                     () ->new ConfiguredFeature<>
@@ -69,6 +71,8 @@ public class ModConfiguredFeatures {
                                             9)
                             )
             );
+
+
 
     public static final RegistryObject<ConfiguredFeature<?, ?>> BLUE_MAPLE =
             CONFIGURED_FEATURES.register("blue_maple", () ->

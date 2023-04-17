@@ -1,12 +1,12 @@
 {
   "structures": [
     {
-      "structure": "comp208mod:portal",
+      "structure": "comp208mod:sky_portal",
       "weight": 1
     }
   ],
   "placement": {
-    "salt": 1694767081,
+    "salt": 1821567019,
     "spacing": 16,
     "separation": 4,
     "type": "minecraft:random_spread"

@@ -20,6 +20,10 @@ public class ModStructureSetTags extends TagsProvider<StructureSet> {
     protected void addTags(){
         tag(ModTags.CUSTOM_DIMENSION_STRUCTURES)
                 .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "portal")));
+        tag(ModTags.CUSTOM_DIMENSION_SKY_STRUCTURES)
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "test")))
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "house_1")))
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "sky_portal")));
     }
 
     @Override

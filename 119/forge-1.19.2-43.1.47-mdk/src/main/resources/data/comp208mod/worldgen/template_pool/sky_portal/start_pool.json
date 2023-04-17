@@ -1,0 +1,26 @@
+{
+
+  "name": "comp208mod:sky_portal/start_pool",
+
+  "fallback": "minecraft:empty",
+
+
+  "elements": [
+    {
+
+      "weight": 1,
+      "element": {
+
+        "location": "comp208mod:sky_portal",
+
+        "processors": "minecraft:empty",
+
+
+        "projection": "terrain_matching",
+
+
+        "element_type": "minecraft:single_pool_element"
+      }
+    }
+  ]
+}

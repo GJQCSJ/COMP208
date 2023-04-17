@@ -2,7 +2,6 @@ package com.example.examplemod.block.custom;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.util.CustomEnergyContainer;
-import com.example.examplemod.util.Tools;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;

@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": "#comp208mod:has_ore",
+  "features": "comp208mod:custom_starstone_ore",
+  "step": "underground_ores"
+}

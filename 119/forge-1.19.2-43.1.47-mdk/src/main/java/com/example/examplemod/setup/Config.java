@@ -1,6 +1,7 @@
 package com.example.examplemod.setup;
 
 import com.example.examplemod.block.custom.GeneratorConfig;
+import com.example.examplemod.world.feature.ModPlacedFeatures;
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.config.ModConfig;
@@ -22,6 +23,7 @@ public class Config {
     private static void registerCommonConfigs(){
         ForgeConfigSpec.Builder COMMON_BUILDER = new ForgeConfigSpec.Builder();
         ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, COMMON_BUILDER.build());
+        ModPlacedFeatures.registerCommonConfig(COMMON_BUILDER);
     }
 
     private static void registerClientConfigs(){

@@ -26,6 +26,7 @@ public class ModBlockStates extends BlockStateProvider {
         registerExtractor();
         registerGenerator();
         registerPortal();
+        registerSkyPortal();
 
         simpleBlock(ModBlocks.AUTO_TEST_BLOCK.get());
         simpleBlock(ModBlocks.SPODUMENE_ORE.get());
@@ -85,6 +86,13 @@ public class ModBlockStates extends BlockStateProvider {
         ResourceLocation side = modLoc("block/portal_side");
         ResourceLocation top = modLoc("block/portal_top");
         simpleBlock(block, models().cube(ModBlocks.PORTAL_BLOCK.getId().getPath(), side, top, side, side, side, side));
+    }
+
+    private void registerSkyPortal() {
+        Block block = ModBlocks.SKY_PORTAL_BLOCK.get();
+        ResourceLocation side = modLoc("block/sky_portal_side");
+        ResourceLocation top = modLoc("block/sky_portal_top");
+        simpleBlock(block, models().cube(ModBlocks.SKY_PORTAL_BLOCK.getId().getPath(), top, top, side, side, side, side));
     }
 
     private void floatingCube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz){

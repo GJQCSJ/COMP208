@@ -15,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
 import net.minecraft.world.level.levelgen.placement.*;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -23,21 +24,52 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 public class ModPlacedFeatures {
+    public static ForgeConfigSpec.IntValue CUSTOM_SPO_SIZE;
+    public static ForgeConfigSpec.IntValue CUSTOM_SPO_AMO;
+    public static ForgeConfigSpec.IntValue CUSTOM_STAR_SIZE;
+    public static ForgeConfigSpec.IntValue CUSTOM_STAR_AMO;
+
+    public static void registerCommonConfig(ForgeConfigSpec.Builder COMMON_BUILDER){
+            COMMON_BUILDER.comment("Ore generation settings").push("ores");
+
+    CUSTOM_SPO_SIZE = COMMON_BUILDER
+            .defineInRange("custom_size_spo", 4, 2, Integer.MAX_VALUE);
+    CUSTOM_SPO_AMO = COMMON_BUILDER
+            .defineInRange("custom_amo_spo", 5, 1, Integer.MAX_VALUE);
+    CUSTOM_STAR_SIZE = COMMON_BUILDER
+            .defineInRange("custom_size_star", 3, 1, Integer.MAX_VALUE);
+    CUSTOM_STAR_AMO = COMMON_BUILDER
+            .defineInRange("custom_amo_star", 3, 1, Integer.MAX_VALUE);
+    COMMON_BUILDER.pop();
+    }
+
     @NotNull
-    public static PlacedFeature createCustomDimensionOreGen(){
+    public static PlacedFeature createCustomDimensionOreGenStar(){
         OreConfiguration config = new OreConfiguration(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.STARSTONE_ORE.get().defaultBlockState(), 25);
         return createPlacedFeature(new ConfiguredFeature<>(Feature.ORE, config),
-                CountPlacement.of(12),
+                CountPlacement.of(16),
                 InSquarePlacement.spread(),
                 new DimensionBiomeFilter(key -> key.equals(CustomDimension.CUSTOM_DIM)),
                 HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(90)));
     }
 
+    @NotNull
+    public static PlacedFeature createCustomDimensionOreGenSpodumene(){
+        OreConfiguration config = new OreConfiguration(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.SPODUMENE_ORE.get().defaultBlockState(), 25);
+        return createPlacedFeature(new ConfiguredFeature<>(Feature.ORE, config),
+                CountPlacement.of(20),
+                InSquarePlacement.spread(),
+                new DimensionBiomeFilter(key -> key.equals(CustomDimension.CUSTOM_DIM)),
+                HeightRangePlacement.uniform(VerticalAnchor.absolute(0), VerticalAnchor.absolute(190)));
+    }
+
+
 
     public static final DeferredRegister<PlacedFeature> PLACED_FEATURES =
             DeferredRegister.create(Registry.PLACED_FEATURE_REGISTRY, comp208mod.MOD_ID);
 
-    public static final RegistryObject<PlacedFeature> ORE_CUSTOM = PLACED_FEATURES.register("custom_starstone_ore", ModPlacedFeatures::createCustomDimensionOreGen);
+    public static final RegistryObject<PlacedFeature> ORE_CUSTOM_STAR = PLACED_FEATURES.register("custom_starstone_ore", ModPlacedFeatures::createCustomDimensionOreGenStar);
+    public static final RegistryObject<PlacedFeature> ORE_CUSTOM_SPO = PLACED_FEATURES.register("custom_spodumene_ore", ModPlacedFeatures::createCustomDimensionOreGenSpodumene);
 
     public static final RegistryObject<PlacedFeature> TEST_ORE_PLACED = PLACED_FEATURES.register(
             "test_ore_placed",

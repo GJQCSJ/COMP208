@@ -3,6 +3,7 @@ package com.example.examplemod.world;
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.world.ores.CustomBiomeModifier;
 import com.example.examplemod.world.structures.NewPortalStructure;
+import com.example.examplemod.world.structures.NewSkyPortalStructure;
 import com.mojang.serialization.Codec;
 import net.minecraft.core.Registry;
 import net.minecraft.resources.ResourceLocation;
@@ -29,6 +30,8 @@ public class Structure_Biomes {
         return () -> codec;
     }
     public static final ResourceLocation CUSTOM_DIMENSION_SET = new ResourceLocation(comp208mod.MOD_ID, "custom_dimension_structure_set");
+    public static final ResourceLocation CUSTOM_DIMENSION_SKY_SET = new ResourceLocation(comp208mod.MOD_ID, "custom_dimension_sky_structure_set");
     public static final RegistryObject<Codec<? extends BiomeModifier>> CUSTOM_BIOME_MODIFIER = BIOME_MODIFIERS.register(CUSTOM_BIOME_MODIFIER_NAME, CustomBiomeModifier::makeCodec);
     public static final RegistryObject<StructureType<?>> PORTAL = STRUCTURES.register("portal", () -> typeConvert(NewPortalStructure.CODEC));
+    public static final RegistryObject<StructureType<?>> SKY_PORTAL = STRUCTURES.register("sky_portal", () -> typeConvert(NewSkyPortalStructure.CODEC));
 }

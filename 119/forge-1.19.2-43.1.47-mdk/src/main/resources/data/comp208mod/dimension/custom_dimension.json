@@ -4,9 +4,9 @@
   "generator": {
     "type": "comp208mod:custom_dimension_chunk",
     "settings": {
-      "base": 65,
-      "vertical_variance": 10,
-      "horizontal_variance": 8
+      "base": 60,
+      "vertical_variance": 4,
+      "horizontal_variance": 16
     }
   }
 }

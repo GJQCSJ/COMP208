@@ -21,5 +21,8 @@ public class ModTags {
     public static final TagKey<Item> GENERATOR_GENERATED = TagKey.create(Registry.ITEM_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "generator_generated"));
     public static final TagKey<Biome> HAS_ORE = TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "has_ore"));
     public static final TagKey<Biome> HAS_PORTAL = TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "has_structure/portal"));
+    public static final TagKey<Biome> HAS_SKY_PORTAL = TagKey.create(Registry.BIOME_REGISTRY, new ResourceLocation(comp208mod.MOD_ID, "has_structure/sky_portal"));
     public static final TagKey<StructureSet> CUSTOM_DIMENSION_STRUCTURES = TagKey.create(Registry.STRUCTURE_SET_REGISTRY, Structure_Biomes.CUSTOM_DIMENSION_SET);
+    public static final TagKey<StructureSet> CUSTOM_DIMENSION_SKY_STRUCTURES = TagKey.create(Registry.STRUCTURE_SET_REGISTRY, Structure_Biomes.CUSTOM_DIMENSION_SKY_SET);
+
 }

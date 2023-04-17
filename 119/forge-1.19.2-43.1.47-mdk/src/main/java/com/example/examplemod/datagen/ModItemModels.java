@@ -32,5 +32,6 @@ public class ModItemModels extends ItemModelProvider {
         withExistingParent(ModItems.GENERATOR_ITEM.getId().getPath(), modLoc("block/generator"));
         singleTexture(ModItems.GENERATED_ITEM.getId().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/generated"));
         withExistingParent(ModItems.PORTAL_ITEM.getId().getPath(), modLoc("block/portal"));
+        withExistingParent(ModItems.SKY_PORTAL_ITEM.getId().getPath(), modLoc("block/sky_portal"));
     }
 }

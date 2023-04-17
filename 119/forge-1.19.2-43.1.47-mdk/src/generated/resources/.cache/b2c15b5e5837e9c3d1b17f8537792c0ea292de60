@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-17T04:20:46.7827994	Item Models: comp208mod
+// 1.19.2	2023-04-17T23:52:37.2713628	Item Models: comp208mod
 2babeb1021ed5b3b29fef334fbe267ad81c29972 assets/comp208mod/models/item/auto_json_testing_block.json
 8616b8cae6683a67c55c5d997e97fd58e40dcd86 assets/comp208mod/models/item/blue_maple_leaves.json
 05b44ee7674cc67d60bddad324403a9e272df3a1 assets/comp208mod/models/item/blue_maple_planks.json
@@ -9,6 +9,7 @@
 a7b81278578a752f0520d1cd1e76c592e15244ae assets/comp208mod/models/item/mana_extractor.json
 a58ae0d3528f9231bd9ce70470c3d1f6fb3e9573 assets/comp208mod/models/item/portal.json
 137873243785b34a27f8421b436eaa9a7e555556 assets/comp208mod/models/item/raw_spodumene.json
+8632390b546e60e393be0c157b3bdc49c1eb69bb assets/comp208mod/models/item/sky_portal.json
 5756a5a42f8be1071322b166f751ad0b7148f66a assets/comp208mod/models/item/spodumene.json
 b202e344b3817dcd9c15bad0c43a1d506e9f7449 assets/comp208mod/models/item/spodumene_block.json
 48704451d8ba3cd99264c0b38e6c2e1b250f19d6 assets/comp208mod/models/item/spodumene_ore.json

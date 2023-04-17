@@ -1,0 +1,36 @@
+{
+  "type": "comp208mod:custom_dimension_sky",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:floating_islands",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:flower_forest",
+          "parameters": {
+            "continentalness": 0,
+            "depth": 0,
+            "erosion": -0.5,
+            "humidity": 0,
+            "offset": 0,
+            "temperature": 0,
+            "weirdness": -0.5
+          }
+        },
+        {
+          "biome": "minecraft:meadow",
+          "parameters": {
+            "continentalness": 0,
+            "depth": 0,
+            "erosion": 0,
+            "humidity": 0,
+            "offset": 0,
+            "temperature": 0,
+            "weirdness": -0.5
+          }
+        }
+      ]
+    }
+  }
+}

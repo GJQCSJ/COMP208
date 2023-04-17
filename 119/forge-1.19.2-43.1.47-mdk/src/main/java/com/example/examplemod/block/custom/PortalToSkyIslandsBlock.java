@@ -17,13 +17,13 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.minecraftforge.common.util.ITeleporter;
+
 import java.util.function.Function;
 
 
-
-public class Portal extends Block {
-    private static final VoxelShape SHAPE = Shapes.box(0, 0, 0, 1, .8, 1);
-    public Portal(){
+public class PortalToSkyIslandsBlock extends Block {
+    private static final VoxelShape SHAPE = Shapes.box(0, 0, 0.4375, 1, 1, 0.5625);
+    public PortalToSkyIslandsBlock(){
         super(Properties.of(Material.PORTAL)
                 .sound(SoundType.STONE)
                 .strength(-1f, 1214651.0f)
@@ -39,10 +39,10 @@ public class Portal extends Block {
     @Override
     public void entityInside(BlockState blockState, Level level, BlockPos pos, Entity entity){
         if (entity instanceof ServerPlayer player){
-            if (level.dimension().equals(CustomDimension.CUSTOM_DIM)){
+            if (level.dimension().equals(CustomDimension.SKY_ISLANDS)){
                 teleportTo(player, pos.north(), Level.OVERWORLD);
             } else {
-                teleportTo(player, pos.north(), CustomDimension.CUSTOM_DIM);
+                teleportTo(player, pos.north(), CustomDimension.SKY_ISLANDS);
             }
         }
     }
@@ -50,7 +50,7 @@ public class Portal extends Block {
     public static void teleport(ServerPlayer entity, ServerLevel destination, BlockPos pos, boolean findTop) {
         entity.changeDimension(destination, new ITeleporter() {
             @Override
-            public net.minecraft.world.entity.Entity placeEntity(net.minecraft.world.entity.Entity entity, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, net.minecraft.world.entity.Entity> repositionEntity) {
+            public Entity placeEntity(Entity entity, ServerLevel currentWorld, ServerLevel destWorld, float yaw, Function<Boolean, Entity> repositionEntity) {
                 entity = repositionEntity.apply(false);
                 int y = pos.getY();
                 if (findTop) {
