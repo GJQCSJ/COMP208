@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "comp208mod:spodumene_ore"
+  },
+  "result": "comp208mod:spodumene"
+}

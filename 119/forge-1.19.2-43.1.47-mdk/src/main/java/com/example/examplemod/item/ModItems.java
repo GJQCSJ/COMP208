@@ -36,6 +36,7 @@ public class ModItems {
 
 
     public static final RegistryObject<Item> AUTO_TEST_ITEM = fromBlock(ModBlocks.AUTO_TEST_BLOCK);
+    public static final RegistryObject<Item> PORTAL_ITEM = fromBlock(ModBlocks.PORTAL_BLOCK);
     public static final RegistryObject<Item> GENERATED_ITEM = ITEMS.register("generated_item",
             () -> new Item(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
     public static final RegistryObject<Item> GENERATOR_ITEM = fromBlock(ModBlocks.GENERATOR);

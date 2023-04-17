@@ -205,6 +205,8 @@ public class ModBlocks {
             )
     );
 
+    public static final RegistryObject<Block> PORTAL_BLOCK = BLOCKS.register("portal", Portal::new);
+
 
 
 //    public static final RegistryObject<>

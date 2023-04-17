@@ -5,6 +5,7 @@ import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
 import net.minecraft.core.Direction;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraftforge.client.model.generators.BlockModelBuilder;
@@ -24,6 +25,7 @@ public class ModBlockStates extends BlockStateProvider {
     protected void registerStatesAndModels(){
         registerExtractor();
         registerGenerator();
+        registerPortal();
 
         simpleBlock(ModBlocks.AUTO_TEST_BLOCK.get());
         simpleBlock(ModBlocks.SPODUMENE_ORE.get());
@@ -76,6 +78,13 @@ public class ModBlockStates extends BlockStateProvider {
                 .customLoader((blockModelBuilder, helper) -> new CustomLoaderBuilder<BlockModelBuilder>(GENERATOR_LOADER, blockModelBuilder, helper) { })
                 .end();
         directionalBlock(ModBlocks.GENERATOR.get(), generatorModel);
+    }
+
+    private void registerPortal() {
+        Block block = ModBlocks.PORTAL_BLOCK.get();
+        ResourceLocation side = modLoc("block/portal_side");
+        ResourceLocation top = modLoc("block/portal_top");
+        simpleBlock(block, models().cube(ModBlocks.PORTAL_BLOCK.getId().getPath(), side, top, side, side, side, side));
     }
 
     private void floatingCube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz){

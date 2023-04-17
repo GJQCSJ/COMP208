@@ -1,6 +1,8 @@
 package com.example.examplemod.setup;
 
 import com.example.examplemod.item.ModItems;
+import com.example.examplemod.world.dimensions.CustomDimension;
+import com.example.examplemod.world.feature.ModPlacedFeatures;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
@@ -28,21 +30,15 @@ public class ModSetup {
 
     public static void setup() {
         IEventBus bus = MinecraftForge.EVENT_BUS;
-//        bus.addGenericListener(Entity.class, ManaEvents::onAttachCapabilitiesPlayer);
-//        bus.addListener(ManaEvents::onPlayerCloned);
-//        bus.addListener(ManaEvents::onRegisterCapabilities);
-//        bus.addListener(ManaEvents::onWorldTick);
     }
 
     public static void init(FMLCommonSetupEvent event) {
-//        event.enqueueWork(() -> {
-//            Dimensions.register();
-//        });
-//        Messages.register();
+        event.enqueueWork(() -> {
+            CustomDimension.register();
+        });
     }
 
     @SubscribeEvent
     public static void onAttributeCreate(EntityAttributeCreationEvent event) {
-//        event.put(Registration.THIEF.get(), ThiefEntity.prepareAttributes().build());
     }
 }

@@ -22,6 +22,7 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStates(generator, event.getExistingFileHelper()));
         generator.addProvider(event.includeClient(), new ModItemModels(generator, event.getExistingFileHelper()));
         generator.addProvider(event.includeClient(), new ModLanguageProvider(generator, "en_us"));
-
+        generator.addProvider(event.includeServer(), new ModBiomeTags(generator, event.getExistingFileHelper()));
+        generator.addProvider(event.includeServer(), new ModStructureSetTags(generator, event.getExistingFileHelper()));
     }
 }

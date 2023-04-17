@@ -1,0 +1,4 @@
+{
+  "type": "comp208mod:custom_biome_modifier",
+  "biomes": "#minecraft:is_jungle"
+}

@@ -29,6 +29,8 @@ public class ModItemTags extends ItemTagsProvider {
         tag(ModTags.STARONE_ORE_ITEM_TIER)
                 .add(Item.byBlock(ModBlocks.DEEPSLATE_STARSTONE_ORE.get()))
                 .add(Item.byBlock(ModBlocks.STARSTONE_ORE.get()));
+        tag(ModTags.GENERATOR_GENERATED)
+                .add(ModItems.GENERATED_ITEM.get());
     }
 
     @Override

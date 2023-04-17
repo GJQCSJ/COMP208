@@ -9,6 +9,7 @@ import com.example.examplemod.setup.Config;
 import com.example.examplemod.setup.ModSetup;
 import com.example.examplemod.setup.Registration;
 import com.example.examplemod.util.ModItemProperties;
+import com.example.examplemod.world.Structure_Biomes;
 import com.example.examplemod.world.feature.ModConfiguredFeatures;
 import com.example.examplemod.world.feature.ModPlacedFeatures;
 import net.minecraft.client.renderer.entity.EntityRenderers;
@@ -53,6 +54,8 @@ public class comp208mod {
         ModBlocks.register(modEventBus);
         Config.register();
         ModSetup.setup();
+        Structure_Biomes.init();
+        ModPlacedFeatures.register(modEventBus);
 
         ModConfiguredFeatures.register(modEventBus);
         ModPlacedFeatures.register(modEventBus);
@@ -91,9 +94,7 @@ public class comp208mod {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
 //            event.enqueueWork(() -> {
-//                MenuScreens.register(ModBlocks.MANA_CONTAINER.get(), ExtractorScreen::new);
-////                ItemBlockRenderTypes.setRenderLayer(ModBlocks.MANA_EXTRACTOR_BLOCK.get(), RenderType.translucent());
-//                ExtractorRender.register();
+
 //            });
 //            MinecraftForge.EVENT_BUS.addListener(KeyInputHandler::onKeyInput);
             EntityRenderers.register(ModEntityTypes.CHOMPER.get(), ChomperRenderer::new);

@@ -29,6 +29,8 @@ public class ModItemModels extends ItemModelProvider {
         withExistingParent(ModBlocks.SPODUMENE_BLOCK.getId().getPath(), modLoc("block/spodumene_block"));
 //        withExistingParent(ModItems.SPODUMENE.getId().getPath(), modLoc("item/spodumene"));
         withExistingParent(ModItems.MANA_EXTRACTOR_ITEM.getId().getPath(), modLoc("block/mana_extractor/main"));
-
+        withExistingParent(ModItems.GENERATOR_ITEM.getId().getPath(), modLoc("block/generator"));
+        singleTexture(ModItems.GENERATED_ITEM.getId().getPath(), mcLoc("item/generated"), "layer0", modLoc("item/generated"));
+        withExistingParent(ModItems.PORTAL_ITEM.getId().getPath(), modLoc("block/portal"));
     }
 }

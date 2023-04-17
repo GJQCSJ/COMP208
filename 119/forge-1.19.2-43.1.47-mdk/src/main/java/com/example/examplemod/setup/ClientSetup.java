@@ -5,8 +5,10 @@ import com.example.examplemod.client.GeneratorModelLoader;
 import com.example.examplemod.client.PowerplantRender;
 import com.example.examplemod.client.PowerplantScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
+import net.minecraftforge.client.event.TextureStitchEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -28,6 +30,13 @@ public class ClientSetup {
         event.register(GeneratorModelLoader.GENERATOR_LOADER.getPath(), new GeneratorModelLoader());
     }
 
+    @SubscribeEvent
+    public static void onTextureStitch(TextureStitchEvent.Pre event){
+        if (!event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)){
+            return;
+        }
+        event.addSprite(PowerplantRender.HALO);
+    }
 //    public static void onTextureStitch(TextureStitchEvent.Pre event){
 //        if (!event.getAtlas().location().equals(TextureAtlas.LOCATION_BLOCKS)){
 //            return;
