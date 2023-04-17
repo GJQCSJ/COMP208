@@ -1,0 +1,18 @@
+{
+
+  "structures": [
+    {
+      "structure": "comp208mod:house_1",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 5465623448,
+
+    "spacing": 20,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}
