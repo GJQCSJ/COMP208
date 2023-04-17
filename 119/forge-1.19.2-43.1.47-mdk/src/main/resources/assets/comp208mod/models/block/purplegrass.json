@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "comp208mod:block/purplegrass"
+  },
+  "render_type": "cutout"
+}

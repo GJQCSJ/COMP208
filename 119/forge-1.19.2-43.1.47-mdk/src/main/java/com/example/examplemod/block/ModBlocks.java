@@ -188,8 +188,19 @@ public class ModBlocks {
                     BlockBehaviour.Properties.copy(Blocks.DANDELION)
             ), ModCreativeModeTab.Test_Demo);
 
+    public static final RegistryObject<Block> PURPLEGRASS = registerBlock("purplegrass",
+            () -> new FlowerBlock(MobEffects.GLOWING, 4,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)
+            ), ModCreativeModeTab.Test_Demo);
+
     public static final RegistryObject<Block> POTTED_JASMINE = BLOCKS.register("potted_jasime",
             () -> new FlowerPotBlock(() ->((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.JASMINE,
+                    BlockBehaviour.Properties.copy(Blocks.DANDELION)
+            )
+    );
+
+    public static final RegistryObject<Block> POTTED_PURPLEGRASS = BLOCKS.register("potted_purplegrass",
+            () -> new FlowerPotBlock(() ->((FlowerPotBlock) Blocks.FLOWER_POT), ModBlocks.PURPLEGRASS,
                     BlockBehaviour.Properties.copy(Blocks.DANDELION)
             )
     );

@@ -2,6 +2,7 @@ package com.example.examplemod.item;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.entity.ModEntityTypes;
 import com.example.examplemod.item.custom.GreatSwordItem;
 import com.example.examplemod.item.custom.MultiPurposeToolItem;
 import com.example.examplemod.item.custom.TestAdvanceItem;
@@ -11,6 +12,7 @@ import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.block.Block;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -49,6 +51,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> TEST_ADV = ITEMS.register("test_advanced_item1",
             () -> new TestAdvanceItem(new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
+
+    public static final RegistryObject<Item> CHOMPER_SPAWN_EGG = ITEMS.register("chomper_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntityTypes.CHOMPER, 0x22b341, 0x19732e,
+                    new Item.Properties().tab(ModCreativeModeTab.Test_Demo)));
 
     private static Item.Properties props(){
         return new Item.Properties().tab(ModCreativeModeTab.Test_Demo);
