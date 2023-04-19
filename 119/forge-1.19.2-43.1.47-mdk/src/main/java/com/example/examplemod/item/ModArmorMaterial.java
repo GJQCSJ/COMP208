@@ -1,4 +1,4 @@
-package com.example.examplemod.base;
+package com.example.examplemod.item;
 
 import com.example.examplemod.comp208mod;
 import net.minecraft.sounds.SoundEvent;

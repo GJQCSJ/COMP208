@@ -1,4 +1,4 @@
-package com.example.examplemod.json_file_generator;
+package com.example.examplemod.datagenerator;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;

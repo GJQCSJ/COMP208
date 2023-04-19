@@ -1,4 +1,4 @@
-package com.example.examplemod.json_file_generator;
+package com.example.examplemod.datagenerator;
 
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;

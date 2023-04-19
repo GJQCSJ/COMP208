@@ -1,6 +1,7 @@
 package com.example.examplemod.world.structures;
 
 import com.example.examplemod.world.Structure_Biomes;
+import com.example.examplemod.world.dimensions.CustomChunkGenerator;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -58,7 +59,7 @@ public class NewSkyPortalStructure extends Structure {
 
     private static boolean extraSpawningChecks(GenerationContext context){
         ChunkPos chunkPos = context.chunkPos();
-        //Make sure this structure is not spawned above y = 120, we want this spawned on sea level as close as possible
+        //Make sure this structure is not spawned above y = 220
         return context.chunkGenerator().getFirstOccupiedHeight(
                 chunkPos.getMinBlockX(),
                 chunkPos.getMinBlockZ(),
@@ -70,7 +71,7 @@ public class NewSkyPortalStructure extends Structure {
 
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context){
-        boolean over_world = !(context.chunkGenerator() instanceof ChunkGenerator);
+        boolean over_world = !(context.chunkGenerator() instanceof CustomChunkGenerator);
         //Check if the spot is suitable for generation of this structure
         if (!NewSkyPortalStructure.extraSpawningChecks(context)){
             return Optional.empty();

@@ -1,4 +1,4 @@
-package com.example.examplemod.json_file_generator;
+package com.example.examplemod.datagenerator;
 
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.util.ModTags;
@@ -18,7 +18,9 @@ public class ModStructureSetTags extends TagsProvider<StructureSet> {
     @Override
     protected void addTags(){
         tag(ModTags.CUSTOM_DIMENSION_STRUCTURES)
-                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "portal")));
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "portal")))
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "house_1")))
+                .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "sky_portal")));
         tag(ModTags.CUSTOM_DIMENSION_SKY_STRUCTURES)
                 .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "test")))
                 .add(ResourceKey.create(BuiltinRegistries.STRUCTURE_SETS.key(), new ResourceLocation(comp208mod.MOD_ID, "house_1")))

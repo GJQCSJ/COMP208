@@ -1,6 +1,5 @@
 package com.example.examplemod.item;
 
-import com.example.examplemod.base.ModArmorMaterial;
 import com.example.examplemod.util.ModTags;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorMaterial;
