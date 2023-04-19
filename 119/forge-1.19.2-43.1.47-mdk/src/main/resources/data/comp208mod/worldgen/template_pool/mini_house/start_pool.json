@@ -1,6 +1,6 @@
 {
 
-  "name": "comp208mod:house_1/start_pool",
+  "name": "comp208mod:mini_house/start_pool",
 
   "fallback": "minecraft:empty",
 
@@ -11,7 +11,7 @@
       "weight": 1,
       "element": {
 
-        "location": "comp208mod:house_1",
+        "location": "comp208mod:mini_house",
 
         "processors": "minecraft:empty",
 
