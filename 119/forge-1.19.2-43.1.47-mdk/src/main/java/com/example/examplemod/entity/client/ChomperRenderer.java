@@ -2,10 +2,11 @@ package com.example.examplemod.entity.client;
 
 
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.entity.custom.ChomperEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 
-import net.kaupenjoe.tutorialmod.entity.custom.ChomperEntity;
+
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;

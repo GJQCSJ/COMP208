@@ -1,7 +1,8 @@
 package com.example.examplemod.entity.client;
 
 import com.example.examplemod.comp208mod;
-import net.kaupenjoe.tutorialmod.entity.custom.ChomperEntity;
+
+import com.example.examplemod.entity.custom.ChomperEntity;
 import net.minecraft.resources.ResourceLocation;
 import software.bernie.geckolib3.model.AnimatedGeoModel;
 

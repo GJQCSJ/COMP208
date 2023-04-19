@@ -1,4 +1,4 @@
-package net.kaupenjoe.tutorialmod.entity.custom;
+package com.example.examplemod.entity.custom;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
