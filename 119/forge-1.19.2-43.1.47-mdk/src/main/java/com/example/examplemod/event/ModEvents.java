@@ -11,7 +11,7 @@ public class ModEvents {
     public static class ModEventBusEvents {
         @SubscribeEvent
         public static void entityAttributeEvent(EntityAttributeCreationEvent event) {
-            event.put(ModEntityTypes.CHOMPER.get(), net.kaupenjoe.tutorialmod.entity.custom.ChomperEntity.setAttributes());
+            event.put(ModEntityTypes.CHOMPER.get(), com.example.examplemod.entity.custom.ChomperEntity.setAttributes());
         }
     }
 }
