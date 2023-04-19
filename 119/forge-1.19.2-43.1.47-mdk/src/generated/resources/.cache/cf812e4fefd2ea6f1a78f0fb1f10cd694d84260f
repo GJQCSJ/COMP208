@@ -1,4 +1,4 @@
-// 1.19.2	2023-04-17T23:52:37.2743223	Block States: comp208mod
+// 1.19.2	2023-04-19T21:25:16.9771369	Block States: comp208mod
 7b6830eddbecfa227e8963b044f23dc0f8b50838 assets/comp208mod/blockstates/auto_json_testing_block.json
 ac8daf04451cec31bd2758cdde4f3579a46118ec assets/comp208mod/blockstates/blue_maple_leaves.json
 409c64e909495031f2513b732dba282d18e8bbae assets/comp208mod/blockstates/blue_maple_planks.json
@@ -23,7 +23,7 @@ bf5a1877b4a964a0fc3dcd382059e3c9ac441361 assets/comp208mod/models/block/mana_ext
 527da4f75923759e9fd0249ef466a122ebcbc75b assets/comp208mod/models/block/mana_extractor/singleoff.json
 20c0711b535b87d5170be67c1791ae01f49a7e5d assets/comp208mod/models/block/mana_extractor/singleon.json
 b7dec6a3b45edc1c4589aec8ac0fd170e336116e assets/comp208mod/models/block/portal.json
-9e881224489a62c3cb46b8cd01eb06ff0c1e3145 assets/comp208mod/models/block/sky_portal.json
+254aaf033fef44318aa4a32522837a6d9b763ee8 assets/comp208mod/models/block/sky_portal.json
 1e4c475c65168644ed1b36218af0d9b9514f9c4e assets/comp208mod/models/block/spodumene_block.json
 1da6089629471e1377f39610efdba4c283fba829 assets/comp208mod/models/block/spodumene_ore.json
 75858bd1e2baa54e3572e53a74f2b6d5153a1658 assets/comp208mod/models/block/starstone_block.json

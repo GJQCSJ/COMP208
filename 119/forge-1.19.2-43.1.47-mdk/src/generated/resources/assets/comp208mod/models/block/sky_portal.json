@@ -2,10 +2,10 @@
   "parent": "minecraft:block/cube",
   "textures": {
     "down": "comp208mod:block/sky_portal_top",
-    "east": "comp208mod:block/sky_portal_side",
+    "east": "comp208mod:block/sky_portal_side2",
     "north": "comp208mod:block/sky_portal_side",
     "south": "comp208mod:block/sky_portal_side",
     "up": "comp208mod:block/sky_portal_top",
-    "west": "comp208mod:block/sky_portal_side"
+    "west": "comp208mod:block/sky_portal_side2"
   }
 }

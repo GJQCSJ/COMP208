@@ -24,6 +24,7 @@ public class ModBiomeTags extends TagsProvider<Biome> {
             tag(ModTags.HAS_ORE).add(TagEntry.tag(BiomeTags.IS_NETHER.location()));
             tag(ModTags.HAS_ORE).add(TagEntry.tag(BiomeTags.IS_END.location()));
             tag(ModTags.HAS_PORTAL).add(biome);
+            tag(ModTags.HAS_SKY_PORTAL).add(biome);
         });
     }
 
