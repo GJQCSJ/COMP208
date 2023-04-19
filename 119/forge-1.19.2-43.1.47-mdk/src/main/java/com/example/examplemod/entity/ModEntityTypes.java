@@ -2,11 +2,12 @@ package com.example.examplemod.entity;
 
 
 import com.example.examplemod.comp208mod;
+import com.example.examplemod.entity.custom.ChomperEntity;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.kaupenjoe.tutorialmod.entity.custom.ChomperEntity;
+
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
