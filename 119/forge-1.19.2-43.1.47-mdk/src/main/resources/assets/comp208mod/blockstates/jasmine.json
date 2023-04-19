@@ -1,5 +1,7 @@
 {
   "variants": {
-    "": {"model": "comp208mod:block/jasmine"}
+    "": {
+      "model": "comp208mod:block/jasmine"
+    }
   }
 }

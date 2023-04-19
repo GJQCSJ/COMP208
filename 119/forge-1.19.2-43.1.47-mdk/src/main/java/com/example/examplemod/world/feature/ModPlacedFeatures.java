@@ -105,6 +105,16 @@ public class ModPlacedFeatures {
     public static final RegistryObject<PlacedFeature> BLUE_MAPLE_PLACED = PLACED_FEATURES.register("blue_maple_placed",
             () -> new PlacedFeature(ModConfiguredFeatures.BLUE_MAPLE_SPAWN.getHolder().get(), VegetationPlacements.treePlacement(
                     PlacementUtils.countExtra(3,0.1f,2))));
+    public static final RegistryObject<PlacedFeature> PURPLEGRASS_PLACED = PLACED_FEATURES.register("purplegrass_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.PURPLEGRASS.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(8),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+    public static final RegistryObject<PlacedFeature> JASMINE_PLACED = PLACED_FEATURES.register("jasmine_placed",
+            () -> new PlacedFeature(ModConfiguredFeatures.JASMINE.getHolder().get(), List.of(RarityFilter.onAverageOnceEvery(8),
+                    InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome())));
+
+
+
+
 
 
 

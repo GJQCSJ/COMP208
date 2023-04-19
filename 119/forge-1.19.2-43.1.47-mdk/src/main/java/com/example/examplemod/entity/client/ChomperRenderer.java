@@ -34,3 +34,4 @@ public class ChomperRenderer extends GeoEntityRenderer<ChomperEntity> {
         return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
     }
 }
+

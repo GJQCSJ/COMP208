@@ -5,14 +5,13 @@ import com.example.examplemod.comp208mod;
 import com.google.common.base.Suppliers;
 import net.minecraft.core.Registry;
 import net.minecraft.data.worldgen.features.OreFeatures;
+import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.WeightedPlacedFeature;
-import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.RandomFeatureConfiguration;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.*;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider;
@@ -27,7 +26,7 @@ import java.io.ObjectInputFilter;
 import java.lang.module.Configuration;
 import java.util.List;
 
-public class ModConfiguredFeatures {
+public class    ModConfiguredFeatures {
     public static final DeferredRegister<ConfiguredFeature<?, ?>> CONFIGURED_FEATURES =
             DeferredRegister.create(Registry.CONFIGURED_FEATURE_REGISTRY, comp208mod.MOD_ID);
 
@@ -89,6 +88,16 @@ public class ModConfiguredFeatures {
                     new RandomFeatureConfiguration(List.of(new WeightedPlacedFeature(
                             ModPlacedFeatures.BLUE_MAPLE_CHECKED.getHolder().get(),
                             0.5F)), ModPlacedFeatures.BLUE_MAPLE_CHECKED.getHolder().get())));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> PURPLEGRASS = CONFIGURED_FEATURES.register("purplegrass",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(16, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.PURPLEGRASS.get()))))));
+
+    public static final RegistryObject<ConfiguredFeature<?, ?>> JASMINE = CONFIGURED_FEATURES.register("jasmin",
+            () -> new ConfiguredFeature<>(Feature.FLOWER,
+                    new RandomPatchConfiguration(16, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
+                            new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.JASMINE.get()))))));
 
 
     public static void register(IEventBus eventBus){

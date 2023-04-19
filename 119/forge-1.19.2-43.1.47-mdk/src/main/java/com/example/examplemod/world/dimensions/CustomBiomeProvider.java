@@ -15,7 +15,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class CustomBiomeProvider extends BiomeSource {
+public class    CustomBiomeProvider extends BiomeSource {
     public static final Codec<CustomBiomeProvider> CODEC = RegistryOps.retrieveRegistry(Registry.BIOME_REGISTRY)
             .xmap(CustomBiomeProvider::new, CustomBiomeProvider::getBiomeRegistry).codec();
 

@@ -17,9 +17,12 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.client.renderer.texture.TextureAtlas;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import com.example.examplemod.entity.client.ChomperRenderer;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelEvent;
 import net.minecraftforge.client.event.TextureStitchEvent;
@@ -83,11 +86,16 @@ public class comp208mod {
 //    }
     private void modSetup(final FMLCommonSetupEvent event)
     {
-        event.enqueueWork( () -> {
+        event.enqueueWork(() -> {
+            SpawnPlacements.register(ModEntityTypes.CHOMPER.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
+
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.JASMINE.getId(),  ModBlocks.POTTED_JASMINE);
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.PURPLEGRASS.getId(),  ModBlocks.POTTED_PURPLEGRASS);
             ModNetworking.register();
         });
+
     }
     private void clientSetup(final FMLClientSetupEvent event){
         ModItemProperties.addCustomItemProperties();

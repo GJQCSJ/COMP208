@@ -109,3 +109,4 @@ public class ChomperEntity extends Monster implements IAnimatable {
         return 0.2F;
     }
 }
+
