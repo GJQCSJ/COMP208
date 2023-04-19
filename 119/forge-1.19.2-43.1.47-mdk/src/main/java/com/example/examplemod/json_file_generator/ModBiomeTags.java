@@ -1,8 +1,7 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
 import com.example.examplemod.comp208mod;
 import com.example.examplemod.util.ModTags;
-import com.example.examplemod.world.Structure_Biomes;
 import net.minecraft.data.BuiltinRegistries;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.tags.TagsProvider;

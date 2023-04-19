@@ -15,7 +15,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.AABB;
 import net.minecraftforge.client.model.data.ModelData;
 import net.minecraftforge.client.model.data.ModelProperty;
 import net.minecraftforge.common.Tags;
@@ -40,19 +39,19 @@ public class GeneratorBE extends BlockEntity {
     // The properties that are used to communicate data to the baked model (GeneratorBakedModel)
     public static final ModelProperty<BlockState> GENERATING_BLOCK = new ModelProperty<>();
     public static final ModelProperty<Boolean> GENERATING = new ModelProperty<>();
-    public static final ModelProperty<Boolean> ACTUALLY_GENERATING = new ModelProperty<>();
+    public static final ModelProperty<Boolean> IS_GENERATING = new ModelProperty<>();
 
     // The actual values for these properties
     private boolean generating = false;
     private BlockState generatingBlock;
     private Item generatingItem;
-    private boolean actuallyGenerating = false;
+    private boolean isGenerating = false;
 
     // For collecting
-    private int collectingTicker = 0;
-    private AABB collectingBox = null;
+//    private int collectingTicker = 0;
+//    private AABB collectingBox = null;
 
-    // For generating our ores
+    // For generating target item or blocks
     private int generatingCounter = 0;
 
     // A direct reference to our items and energy for easy access inside our block entity
@@ -113,8 +112,8 @@ public class GeneratorBE extends BlockEntity {
         if (generating) {
             areWeGenerating = generateResources();
         }
-        if (areWeGenerating != actuallyGenerating) {
-            actuallyGenerating = areWeGenerating;
+        if (areWeGenerating != isGenerating) {
+            isGenerating = areWeGenerating;
             setChanged();
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
         }
@@ -243,7 +242,7 @@ public class GeneratorBE extends BlockEntity {
     public void onDataPacket(Connection net, ClientboundBlockEntityDataPacket pkt) {
         // This is called client side: remember the current state of the values that we're interested in
         boolean oldGenerating = generating;
-        boolean oldActuallyGenerating = actuallyGenerating;
+        boolean oldActuallyGenerating = isGenerating;
         BlockState oldGeneratingBlock = generatingBlock;
 
         CompoundTag tag = pkt.getTag();
@@ -253,7 +252,7 @@ public class GeneratorBE extends BlockEntity {
         // If any of the values was changed we request a refresh of our model data and send a block update (this will cause
         // the baked model to be recreated)
         if (oldGenerating != generating ||
-                oldActuallyGenerating != actuallyGenerating ||
+                oldActuallyGenerating != isGenerating ||
                 !Objects.equals(generatingBlock, oldGeneratingBlock)) {
             requestModelDataUpdate();
             level.sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), Block.UPDATE_ALL);
@@ -275,7 +274,7 @@ public class GeneratorBE extends BlockEntity {
         return ModelData.builder()
                 .with(GENERATING_BLOCK, generatingBlock)
                 .with(GENERATING, generating)
-                .with(ACTUALLY_GENERATING, actuallyGenerating)
+                .with(IS_GENERATING, isGenerating)
                 .build();
     }
 
@@ -292,7 +291,7 @@ public class GeneratorBE extends BlockEntity {
         CompoundTag infoTag = new CompoundTag();
         tag.put("Info", infoTag);
         infoTag.putBoolean("generating", generating);
-        tag.putBoolean("actuallyGenerating", actuallyGenerating);
+        tag.putBoolean("isGenerating", isGenerating);
         if (generatingBlock != null) {
             infoTag.put("block", NbtUtils.writeBlockState(generatingBlock));
         }
@@ -321,7 +320,7 @@ public class GeneratorBE extends BlockEntity {
                 generatingBlock = NbtUtils.readBlockState(infoTag.getCompound("block"));
             }
         }
-        actuallyGenerating = tag.getBoolean("actuallyGenerating");
+        isGenerating = tag.getBoolean("isGenerating");
     }
 
     @NotNull

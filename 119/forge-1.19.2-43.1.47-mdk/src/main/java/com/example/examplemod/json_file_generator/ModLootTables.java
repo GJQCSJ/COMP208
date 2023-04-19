@@ -1,10 +1,8 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.item.ModItems;
-import com.example.examplemod.util.ModTags;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.data.loot.LootTableProvider;
 
 public class ModLootTables extends BasicLootTableProvider {
     public ModLootTables(DataGenerator dataGeneratorIn){

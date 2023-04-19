@@ -1,4 +1,4 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

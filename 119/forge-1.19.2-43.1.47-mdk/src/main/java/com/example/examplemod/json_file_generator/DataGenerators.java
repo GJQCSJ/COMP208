@@ -1,6 +1,5 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
-import com.example.examplemod.comp208mod;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -14,7 +13,6 @@ public class DataGenerators {
     public static void gatherData(GatherDataEvent event){
         DataGenerator generator = event.getGenerator();
         generator.addProvider(event.includeServer(), new ModRecipes(generator));
-        // LootTable generator is still under consideration
         generator.addProvider(event.includeServer(), new ModLootTables(generator));
         ModBlockTags blockTags = new ModBlockTags(generator, event.getExistingFileHelper());
         generator.addProvider(event.includeServer(), blockTags);

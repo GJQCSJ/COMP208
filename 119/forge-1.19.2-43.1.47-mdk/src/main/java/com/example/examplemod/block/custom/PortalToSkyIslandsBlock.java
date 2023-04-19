@@ -23,9 +23,10 @@ import java.util.function.Function;
 
 public class PortalToSkyIslandsBlock extends Block {
     private static final VoxelShape SHAPE = Shapes.box(0, 0, 0.4375, 1, 1, 0.5625);
+    // The shape of this portal block should be similar to a glass sheet
     public PortalToSkyIslandsBlock(){
         super(Properties.of(Material.PORTAL)
-                .sound(SoundType.STONE)
+                .sound(SoundType.STONE) // The portal blocks are invincible so cannot be destroyed
                 .strength(-1f, 1214651.0f)
                 .noLootTable());
     }

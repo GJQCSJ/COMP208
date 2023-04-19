@@ -1,7 +1,6 @@
 package com.example.examplemod.world.structures;
 
 import com.example.examplemod.world.Structure_Biomes;
-import com.example.examplemod.world.dimensions.CustomChunkGenerator;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
 import net.minecraft.core.BlockPos;
@@ -10,6 +9,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.NoiseColumn;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.chunk.ChunkGenerator;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.structure.Structure;
@@ -70,7 +70,7 @@ public class NewSkyPortalStructure extends Structure {
 
     @Override
     public Optional<GenerationStub> findGenerationPoint(GenerationContext context){
-        boolean over_world = !(context.chunkGenerator() instanceof CustomChunkGenerator);
+        boolean over_world = !(context.chunkGenerator() instanceof ChunkGenerator);
         //Check if the spot is suitable for generation of this structure
         if (!NewSkyPortalStructure.extraSpawningChecks(context)){
             return Optional.empty();

@@ -21,11 +21,11 @@ public class CustomBiomeProvider extends BiomeSource {
 
     private final Holder<Biome> biome;
     private final Registry<Biome> biomeRegistry;
-    private static final List<ResourceKey<Biome>> SPAWN = Collections.singletonList(Biomes.PLAINS);
+    private static final List<ResourceKey<Biome>> SPAWN = Collections.singletonList(Biomes.FLOWER_FOREST);
     public CustomBiomeProvider(Registry<Biome> biomeRegistry){
         super(getStartBiomes(biomeRegistry));
         this.biomeRegistry = biomeRegistry;
-        biome = biomeRegistry.getHolderOrThrow(Biomes.PLAINS);
+        biome = biomeRegistry.getHolderOrThrow(Biomes.FLOWER_FOREST);
     }
 
     private static List<Holder<Biome>> getStartBiomes(Registry<Biome> biomeRegistry){

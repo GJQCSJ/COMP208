@@ -22,15 +22,15 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import static java.lang.Boolean.TRUE;
 
 public class PowerplantRender implements BlockEntityRenderer<PowerplantBE> {
-    public static final ResourceLocation HALO = new ResourceLocation(comp208mod.MOD_ID, "effect/halo");
+    public static final ResourceLocation HOVER = new ResourceLocation(comp208mod.MOD_ID, "effect/particle");
 
     public PowerplantRender(BlockEntityRendererProvider.Context context){
 
     }
     @Override
-    public void render(PowerplantBE mana_extractor, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int combinedLight, int combinedOverlay){
+    public void render(PowerplantBE power, float partialTicks, PoseStack poseStack, MultiBufferSource bufferSource, int combinedLight, int combinedOverlay){
 
-        Boolean powered = mana_extractor.getBlockState().getValue(BlockStateProperties.POWERED);
+        Boolean powered = power.getBlockState().getValue(BlockStateProperties.POWERED);
         if (TRUE != powered){
             return;
         }
@@ -41,10 +41,10 @@ public class PowerplantRender implements BlockEntityRenderer<PowerplantBE> {
         if (s > 0.5f){
             s = 1.0f - s;
         }
-        float scale = 0.1f + s * (float)(double) PowerplantConfig.RENDER_SCALE.get();
+        float scale = 0.05f + s * (float)(double) PowerplantConfig.RENDER_SCALE.get();
 
         //Get texture from atlas
-        TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(HALO);
+        TextureAtlasSprite sprite = Minecraft.getInstance().getTextureAtlas(InventoryMenu.BLOCK_ATLAS).apply(HOVER);
         //Push current poseStack so it can be restored
         poseStack.pushPose();
         //

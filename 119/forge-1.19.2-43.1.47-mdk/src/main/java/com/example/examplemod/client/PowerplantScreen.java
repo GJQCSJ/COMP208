@@ -11,7 +11,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Inventory;
 
 public class PowerplantScreen extends AbstractContainerScreen<PowerplantContainer> {
-    private final ResourceLocation GUI = new ResourceLocation(comp208mod.MOD_ID, "textures/gui/mana_extractor_gui1.png");
+    private final ResourceLocation GUI = new ResourceLocation(comp208mod.MOD_ID, "textures/gui/mana_extractor_gui.png");
 
     public PowerplantScreen(PowerplantContainer container, Inventory inventory, Component name){
         super(container, inventory, name);

@@ -27,8 +27,8 @@ import net.minecraftforge.common.util.Lazy;
 import java.util.UUID;
 
 public class GreatSwordItem extends SwordItem {
-    public static final UUID REACH_MOD = UUID.fromString("dccd59ec-6391-436d-9e00-47f2e6005e20"); //A randomly generated version 4 UUID
-    public static final UUID KNOCKBACK_MOD = UUID.fromString("15bf6a06-b73b-4d8e-946a-61f63e1ba01e"); //Another randomly generated version 4 UUID
+    public static final UUID REACH_MOD = UUID.fromString("dccd59ec-6391-436d-9e00-47f2e6005e20");
+    public static final UUID KNOCKBACK_MOD = UUID.fromString("15bf6a06-b73b-4d8e-946a-61f63e1ba01e");
     public double reach;
     public double knockBack;
     public int damage;
@@ -75,7 +75,7 @@ public class GreatSwordItem extends SwordItem {
     public UseAnim getUseAnimation(ItemStack pStack) {
         return UseAnim.BLOCK;
     }
-    /*Animation of blocking will be altered in the future*/
+    /*Animation of blocking will be altered in the future if possible*/
     public int getUseDuration(ItemStack pStack) {
         return 72000;
     }

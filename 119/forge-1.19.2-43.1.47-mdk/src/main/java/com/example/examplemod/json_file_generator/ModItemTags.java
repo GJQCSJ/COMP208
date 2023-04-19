@@ -1,4 +1,4 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
 import com.example.examplemod.block.ModBlocks;
 import com.example.examplemod.comp208mod;

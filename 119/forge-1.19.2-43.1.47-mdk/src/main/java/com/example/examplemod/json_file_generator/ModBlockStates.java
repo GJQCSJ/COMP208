@@ -1,4 +1,4 @@
-package com.example.examplemod.datagen;
+package com.example.examplemod.json_file_generator;
 
 
 import com.example.examplemod.block.ModBlocks;
@@ -92,7 +92,8 @@ public class ModBlockStates extends BlockStateProvider {
         Block block = ModBlocks.SKY_PORTAL_BLOCK.get();
         ResourceLocation side = modLoc("block/sky_portal_side");
         ResourceLocation top = modLoc("block/sky_portal_top");
-        simpleBlock(block, models().cube(ModBlocks.SKY_PORTAL_BLOCK.getId().getPath(), top, top, side, side, side, side));
+        ResourceLocation side2 = modLoc("block/sky_portal_side2");
+        simpleBlock(block, models().cube(ModBlocks.SKY_PORTAL_BLOCK.getId().getPath(), top, top, side, side, side2, side2));
     }
 
     private void floatingCube(BlockModelBuilder builder, float fx, float fy, float fz, float tx, float ty, float tz){

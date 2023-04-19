@@ -23,9 +23,10 @@ import java.util.function.Function;
 
 public class Portal extends Block {
     private static final VoxelShape SHAPE = Shapes.box(0, 0, 0, 1, .8, 1);
+    // The shape of this portal block should be similar to a step
     public Portal(){
         super(Properties.of(Material.PORTAL)
-                .sound(SoundType.STONE)
+                .sound(SoundType.STONE) // The portal blocks are invincible so cannot be destroyed
                 .strength(-1f, 1214651.0f)
                 .noLootTable());
     }

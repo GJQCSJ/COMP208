@@ -11,6 +11,7 @@ import net.minecraft.core.particles.SculkChargeParticleOptions;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.biome.AmbientParticleSettings;
 import net.minecraft.world.level.biome.Biome;
+import net.minecraft.world.level.biome.MobSpawnSettings;
 import net.minecraft.world.level.levelgen.GenerationStep;
 import net.minecraftforge.common.world.BiomeModifier;
 import net.minecraftforge.common.world.ModifiableBiomeInfo;
@@ -23,6 +24,9 @@ public record CustomBiomeModifier(HolderSet<Biome> biomes) implements BiomeModif
     public void modify(Holder<Biome> biome, Phase phase, ModifiableBiomeInfo.BiomeInfo.Builder builder){
         if (phase == Phase.ADD && this.biomes.contains(biome)){
             builder.getSpecialEffects().ambientParticle(new AmbientParticleSettings(new SculkChargeParticleOptions(1.0f), 1.0f));
+            builder.getGenerationSettings().getFeatures(GenerationStep.Decoration.LAKES);
+            builder.getGenerationSettings().getFeatures(GenerationStep.Decoration.STRONGHOLDS);
+            builder.getMobSpawnSettings();
         }
     }
 

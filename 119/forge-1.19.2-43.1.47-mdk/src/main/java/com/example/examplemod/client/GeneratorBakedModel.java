@@ -44,12 +44,6 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
     private final ItemOverrides overrides;
     private final ItemTransforms itemTransforms;
 
-    /**
-     * @param modelState represents the transformation (orientation) of our model. This is generated from the FACING property that our blockstate uses
-     * @param spriteGetter gives a way to convert materials to actual sprites on the main atlas
-     * @param overrides this is used for using this baked model when it is rendered in an inventory (as an item)
-     * @param itemTransforms these represent the transforms to use for the item model
-     */
     public GeneratorBakedModel(ModelState modelState, Function<Material, TextureAtlasSprite> spriteGetter,
                                ItemOverrides overrides, ItemTransforms itemTransforms) {
         this.modelState = modelState;
@@ -64,35 +58,19 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         return false;
     }
 
-    /**
-     * Whenever a chunk where our block is in needs to be rerendered this method is called to return the quads (polygons)
-     * for our model. Typically this will be called seven times: one time for every direction and one time in general.
-     * If you have a block that is solid at one of the six sides it can be a good idea to render that face only for that
-     * direction. That way Minecraft knows that it can get rid of that face when another solid block is adjacent to that.
-     * All faces or quads that are generated for side == null are not going to be culled away like that
-     * @param state the blockstate for our block
-     * @param side the six directions or null for quads that are not at a specific direction
-     * @param rand random generator that you can use to add variations to your model (usually for textures)
-     * @param extraData this represents the data that is given to use from our block entity
-     * @return a list of quads
-     */
     @Nonnull
     @Override
     public List<BakedQuad> getQuads(@Nullable BlockState state, @Nullable Direction side, @Nonnull RandomSource rand, @Nonnull ModelData extraData, @Nullable RenderType layer) {
 
-        // Are we on the solid render type and are we rendering for side == null
         if (side != null || (layer != null && !layer.equals(RenderType.solid()))) {
             return Collections.emptyList();
         }
 
-        // Get the data from our block entity
         boolean generating = TRUE == extraData.get(GeneratorBE.GENERATING);
-        boolean actuallyGenerating = TRUE == extraData.get(GeneratorBE.ACTUALLY_GENERATING);
+        boolean actuallyGenerating = TRUE == extraData.get(GeneratorBE.IS_GENERATING);
 
-        // Generate the quads from the block (ore) that we are generating
         var quads = getQuadsForGeneratingBlock(state, rand, extraData, layer);
 
-        // ModelKey represents a unique configuration. We can use this to get our cached quads
         ModelKey key = new ModelKey(generating, actuallyGenerating, modelState);
         quads.addAll(quadCache.get(key));
 
@@ -110,10 +88,6 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         quadCache.put(new ModelKey(false,  true, modelState), generateQuads(false,  true));
     }
 
-    /**
-     * Generate the quads for a given configuration. This is done in the constructor in order to populate
-     * our quad cache.
-     */
     @NotNull
     private List<BakedQuad> generateQuads(boolean generating, boolean actuallyGenerating) {
         var quads = new ArrayList<BakedQuad>();
@@ -121,10 +95,10 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         float r = 1;
         float p = 13f / 16f; // Relative position of panel
 
-        float bl = 1f/16f;   // Left side of button
-        float br = 7f/16f;   // Right side of button
+        float bl = 1f/16f;
+        float br = 7f/16f;
 
-        float h = .5f;       // Half
+        float h = .5f;
 
         Transformation rotation = modelState.getRotation();
 
@@ -142,14 +116,6 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         quads.add(ClientTools.createQuad(v(r, p, l), v(r, l, l), v(l, l, l), v(l, p, l), rotation, textureSide));
         quads.add(ClientTools.createQuad(v(l, p, r), v(l, l, r), v(r, l, r), v(r, p, r), rotation, textureSide));
 
-//        // The collecting button
-//        float s = collecting ? 14f/16f : r;
-//        float offset = 0;
-//        quads.add(ClientTools.createQuad(v(br, s, br+offset), v(br, s, bl+offset), v(bl, s, bl+offset), v(bl, s, br+offset), rotation, collecting ? textureOn : textureOff));
-//        quads.add(ClientTools.createQuad(v(br, s, br+offset), v(br, p, br+offset), v(br, p, bl+offset), v(br, s, bl+offset), rotation, textureSide));
-//        quads.add(ClientTools.createQuad(v(bl, s, bl+offset), v(bl, p, bl+offset), v(bl, p, br+offset), v(bl, s, br+offset), rotation, textureSide));
-//        quads.add(ClientTools.createQuad(v(br, s, bl+offset), v(br, p, bl+offset), v(bl, p, bl+offset), v(bl, s, bl+offset), rotation, textureSide));
-//        quads.add(ClientTools.createQuad(v(bl, s, br+offset), v(bl, p, br+offset), v(br, p, br+offset), v(br, s, br+offset), rotation, textureSide));
 
         // The generating button
         float s = generating ? 14f/16f : r;
@@ -162,9 +128,6 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         return quads;
     }
 
-    /**
-     * Get the quads from the block we are generating.
-     */
     private List<BakedQuad> getQuadsForGeneratingBlock(@Nullable BlockState state, @NotNull RandomSource rand, @NotNull ModelData extraData, RenderType layer) {
         var quads = new ArrayList<BakedQuad>();
         BlockState generatingBlock = extraData.get(GeneratorBE.GENERATING_BLOCK);
@@ -194,21 +157,12 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
         return quads;
     }
 
-    /**
-     * Generate a transform that will transform the ore block that we're generating to a smaller version
-     * that fits nicely into our front panel.
-     */
     @NotNull
     private Transformation transformGeneratingBlock(Direction facing, Transformation rotation) {
-        // Note: when composing a transformation like this you have to imagine these transformations in reverse order.
-        // So this routine makes most sense if you read it from end to beginning
 
-        // Facing refers to the front face of our block. So dX, dY, dZ are the offsets pointing
-        // in that direction. We want to move our model slightly to the front and top-left corner
         float dX = facing.getStepX();
         float dY = facing.getStepY();
         float dZ = facing.getStepZ();
-        // Correct depending on face. After this dX, dY, dZ will be the offset perpendicular to the direction of our face
         switch (facing) {
             case DOWN ->  { dX = 1; dY = 0; dZ = -1; }
             case UP ->    { dX = 1; dY = 0; dZ = 1; }
@@ -217,24 +171,15 @@ public class GeneratorBakedModel implements IDynamicBakedModel {
             case WEST ->  { dX = 0; dY = 1; dZ = -1; }
             case EAST ->  { dX = 0; dY = 1; dZ = 1; }
         }
-        // Calculate the first translation (before scaling/rotating). Basically we move in three steps:
-        //   - Move in the direction that our front face is facing (divided by 4)
-        //   - Move perpendicular to that direction (also divided by 4)
-        //   - Move half a block so that rotation and scaling will happen relative to the center
         float stepX = facing.getStepX() / 4f + dX / 4f + .5f;
         float stepY = facing.getStepY() / 4f + dY / 4f + .5f;
         float stepZ = facing.getStepZ() / 4f + dZ / 4f + .5f;
 
-        // As the final step (remember, read from end to start) we position our correctly rotated and scaled
-        // block to the top-left corner of our main block
         Transformation translate = new Transformation(Matrix4f.createTranslateMatrix(stepX, stepY, stepZ));
 
-        // Now our block is correctly positioned where we want to rotate and scale it
         translate = translate.compose(new Transformation(Matrix4f.createScaleMatrix(.2f, .2f, .2f)));
         translate = translate.compose(rotation);    // The rotation from our main model
 
-        // This will happen first: translate our subblock so it's center is at 0,0,0. That way scaling and rotating will be correct and
-        // not change the position
         translate = translate.compose(new Transformation(Matrix4f.createTranslateMatrix(-.5f, -.5f, -.5f)));
         return translate;
     }

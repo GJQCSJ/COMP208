@@ -13,11 +13,11 @@ public class PowerplantConfig {
 
         MANA_CAP = SERVER_BUILDER
                 .comment("how much capacity of this")
-                .defineInRange("capacity", 50000, 1, Integer.MAX_VALUE);
+                .defineInRange("capacity", 65535, 1, Integer.MAX_VALUE);
 
         MANA_GEN = SERVER_BUILDER
-                .comment("how much generated")
-                .defineInRange("generate", 60, 1, Integer.MAX_VALUE);
+                .comment("how much energy generated per tick")
+                .defineInRange("generate", 300, 1, Integer.MAX_VALUE);
 
         MANA_SEND = SERVER_BUILDER
                 .comment("how much send per tick")
