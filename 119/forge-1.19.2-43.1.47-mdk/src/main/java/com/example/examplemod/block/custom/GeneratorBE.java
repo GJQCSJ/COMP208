@@ -132,13 +132,13 @@ public class GeneratorBE extends BlockEntity {
         while (this.energy.getEnergyStored() >= GeneratorConfig.ENERGY_GENERATE.get()){
             energy.consumeEnergy(GeneratorConfig.ENERGY_GENERATE.get());
             areWeGenerating = true;
+            ItemStack output;
             if (generatingBlock == null){
-                ItemStack output =ItemHandlerHelper.insertItem(outputItems, new ItemStack(generatingItem.asItem()), false);
-                spawnInWorld(level, worldPosition, output);
+                output = ItemHandlerHelper.insertItem(outputItems, new ItemStack(generatingItem.asItem()), false);
             } else {
-                ItemStack output =ItemHandlerHelper.insertItem(outputItems, new ItemStack(generatingBlock.getBlock().asItem()), false);
-                spawnInWorld(level, worldPosition, output);
+                output = ItemHandlerHelper.insertItem(outputItems, new ItemStack(generatingBlock.getBlock().asItem()), false);
             }
+            spawnInWorld(level, worldPosition, output);
         }
 //        for (int i = 0; i < inputItems.getSlots() ; i++) {
 //            ItemStack item = inputItems.getStackInSlot(i);
