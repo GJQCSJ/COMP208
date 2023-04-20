@@ -12,6 +12,7 @@ public class ChomperModel extends AnimatedGeoModel<ChomperEntity> {
         return new ResourceLocation(comp208mod.MOD_ID, "geo/chomper.geo.json");
     }
 
+
     @Override
     public ResourceLocation getTextureResource(ChomperEntity object) {
         return new ResourceLocation(comp208mod.MOD_ID, "textures/entity/chomper_texture.png");
@@ -21,6 +22,9 @@ public class ChomperModel extends AnimatedGeoModel<ChomperEntity> {
     public ResourceLocation getAnimationResource(ChomperEntity animatable) {
         return new ResourceLocation(comp208mod.MOD_ID, "animations/chomper.animation.json");
     }
+
+
+
 }
 
 

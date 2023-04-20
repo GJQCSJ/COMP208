@@ -1,5 +1,4 @@
 package com.example.examplemod.entity.custom;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
@@ -88,6 +87,7 @@ public class ChomperEntity extends Monster implements IAnimatable {
     public AnimationFactory getFactory() {
         return factory;
     }
+
 
     protected void playStepSound(BlockPos pos, BlockState blockIn) {
         this.playSound(SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, 0.15F, 1.0F);

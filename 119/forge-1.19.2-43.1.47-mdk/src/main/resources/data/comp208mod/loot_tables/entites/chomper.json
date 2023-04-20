@@ -2,15 +2,26 @@
     "type": "minecraft:entity",
     "pools": [
         {
+            "bonus_rolls": 0.0,
+            "conditions": [
+                {
+                    "condition": "minecraft:killed_by_player"
+                }
+            ],
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "weight": 1,
-                    "name": "minecraft:gold_ingot"
+                    "name": "minecraft:gold_ingot",
+                    "functions": [
+                        {
+                            "function": "minecraft:set_count",
+                            "count": 5.0,
+                            "add": true
+                        }
+                    ]
                 }
             ],
-            "rolls": 1.0
-
+            "rolls": 1
         }
     ]
 }

@@ -69,5 +69,41 @@ public class ModRecipes extends RecipeProvider {
                 .group("comp208mod")
                 .unlockedBy("ironsword", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.TEST_ARMOR_CHEST_PLATE.get())
+                .pattern("YXY")
+                .pattern("YYY")
+                .pattern("YYY")
+                .define('X', ModItems.STARSTONE.get())
+                .define('Y', ModItems.SPODUMENE_IGNOT.get())
+                .group("comp208mod")
+                .unlockedBy("chest", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.TEST_ARMOR_HELMET.get())
+                .pattern("YYY")
+                .pattern("YXY")
+                .pattern("   ")
+                .define('X', ModItems.STARSTONE.get())
+                .define('Y', ModItems.SPODUMENE_IGNOT.get())
+                .group("comp208mod")
+                .unlockedBy("helmet", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.TEST_ARMOR_LEGGINGS.get())
+                .pattern("YXY")
+                .pattern("Y Y")
+                .pattern("Y Y")
+                .define('X', ModItems.STARSTONE.get())
+                .define('Y', ModItems.SPODUMENE_IGNOT.get())
+                .group("comp208mod")
+                .unlockedBy("leg", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
+                .save(consumer);
+        ShapedRecipeBuilder.shaped(ModItems.TEST_ARMOR_BOOTS.get())
+                .pattern("Y Y")
+                .pattern("X X")
+                .pattern("   ")
+                .define('X', ModItems.STARSTONE.get())
+                .define('Y', ModItems.SPODUMENE_IGNOT.get())
+                .group("comp208mod")
+                .unlockedBy("boot", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
+                .save(consumer);
     }
 }
