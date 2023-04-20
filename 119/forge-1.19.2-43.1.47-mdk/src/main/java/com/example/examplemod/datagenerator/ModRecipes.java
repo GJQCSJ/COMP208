@@ -42,6 +42,15 @@ public class ModRecipes extends RecipeProvider {
                 .group("comp208mod")
                 .unlockedBy("spodumene", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
                 .save(consumer);
+        ShapedRecipeBuilder.shaped(ModBlocks.GENERATOR.get())
+                        .pattern("YYY")
+                        .pattern("YXY")
+                        .pattern("XXX")
+                                .define('X', ModItems.STARSTONE.get())
+                                        .define('Y', ModItems.SPODUMENE_IGNOT.get())
+                                                .group("comp208mod")
+                                                        .unlockedBy("starstone",InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.STARSTONE.get()))
+                                                                .save(consumer);
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModTags.STARONE_ORE_ITEM_TIER),
                         ModItems.STARSTONE.get(), 1.0f, 100)
                 .unlockedBy("has_ore", has(ModTags.STARONE_ORE_ITEM_TIER))
@@ -50,7 +59,7 @@ public class ModRecipes extends RecipeProvider {
                         ModItems.STARSTONE.get(), 0.7f, 100)
                 .unlockedBy("has_chunk", has(ModItems.STARSTONE_RAW.get()))
                 .save(consumer, "starstone2");
-        ShapedRecipeBuilder.shaped(ModBlocks.MANA_EXTRACTOR_BLOCK.get())
+        ShapedRecipeBuilder.shaped(ModItems.GREAT_SWORD.get())
                 .pattern("YYY")
                 .pattern("YXY")
                 .pattern("YZY")
