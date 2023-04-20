@@ -6,7 +6,7 @@
                 {
                     "type": "minecraft:item",
                     "weight": 1,
-                    "name": "minecraft:diamond"
+                    "name": "minecraft:gold_ingot"
                 }
             ],
             "rolls": 1.0
