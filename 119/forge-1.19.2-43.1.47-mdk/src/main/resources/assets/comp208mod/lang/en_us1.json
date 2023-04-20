@@ -54,5 +54,7 @@
   "key.comp208mod.drink_water": "Drink Water",
 
   "message.comp208mod.drink_water": "Drinking Water",
-  "message.comp208mod.no_water": "No Water Nearby"
+  "message.comp208mod.no_water": "No Water Nearby",
+
+  "entity.comp208mod.chomper":"Chomper"
 }

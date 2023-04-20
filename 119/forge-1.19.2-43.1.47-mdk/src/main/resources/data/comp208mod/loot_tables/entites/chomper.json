@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:entity",
+    "pools": [
+        {
+            "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 1,
+                    "name": "minecraft:diamond"
+                }
+            ],
+            "rolls": 1.0
+
+        }
+    ]
+}
