@@ -9,6 +9,7 @@ import net.minecraft.data.recipes.FinishedRecipe;
 import net.minecraft.data.recipes.RecipeProvider;
 import net.minecraft.data.recipes.ShapedRecipeBuilder;
 import net.minecraft.data.recipes.SimpleCookingRecipeBuilder;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraftforge.common.Tags;
 
@@ -40,6 +41,24 @@ public class ModRecipes extends RecipeProvider {
                 .define('Z', Tags.Items.OBSIDIAN)
                 .group("comp208mod")
                 .unlockedBy("spodumene", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
+                .save(consumer);
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModTags.STARONE_ORE_ITEM_TIER),
+                        ModItems.STARSTONE.get(), 1.0f, 100)
+                .unlockedBy("has_ore", has(ModTags.STARONE_ORE_ITEM_TIER))
+                .save(consumer, "starstone1");
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.STARSTONE_RAW.get()),
+                        ModItems.STARSTONE.get(), 0.7f, 100)
+                .unlockedBy("has_chunk", has(ModItems.STARSTONE_RAW.get()))
+                .save(consumer, "starstone2");
+        ShapedRecipeBuilder.shaped(ModBlocks.MANA_EXTRACTOR_BLOCK.get())
+                .pattern("YYY")
+                .pattern("YXY")
+                .pattern("YZY")
+                .define('X', ModItems.GENERATED_ITEM.get())
+                .define('Y', ModItems.STARSTONE.get())
+                .define('Z', Items.STICK)
+                .group("comp208mod")
+                .unlockedBy("ironsword", InventoryChangeTrigger.TriggerInstance.hasItems(ModItems.SPODUMENE_IGNOT.get()))
                 .save(consumer);
     }
 }

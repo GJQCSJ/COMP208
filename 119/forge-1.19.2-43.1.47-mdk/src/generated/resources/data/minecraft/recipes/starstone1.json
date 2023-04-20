@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredient": {
+    "tag": "comp208mod:starstone_item"
+  },
+  "result": "comp208mod:starstone"
+}

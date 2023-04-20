@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "comp208mod",
+  "key": {
+    "X": {
+      "item": "comp208mod:generated_item"
+    },
+    "Y": {
+      "item": "comp208mod:starstone"
+    },
+    "Z": {
+      "item": "minecraft:stick"
+    }
+  },
+  "pattern": [
+    "YYY",
+    "YXY",
+    "YZY"
+  ],
+  "result": {
+    "item": "comp208mod:great_sword"
+  }
+}

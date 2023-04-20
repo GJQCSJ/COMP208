@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "comp208mod:great_sword"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    },
+    "ironsword": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "comp208mod:generated_item"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "requirements": [
+    [
+      "ironsword",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "comp208mod:great_sword"
+    ]
+  }
+}
