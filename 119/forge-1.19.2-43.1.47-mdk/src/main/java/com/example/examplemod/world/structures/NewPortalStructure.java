@@ -65,7 +65,7 @@ public class NewPortalStructure extends Structure {
                 Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
                 context.heightAccessor(),
                 context.randomState()
-        ) < 120;
+        ) < 220;
     }
 
     @Override
