@@ -3,35 +3,69 @@
 	"animations": {
 		"animation.chomper.idle": {
 			"loop": true,
-			"animation_length": 1.5,
+			"animation_length": 2,
 			"bones": {
 				"head": {
 					"rotation": {
-						"0.6667": {
-							"vector": [-27.5, 0, 0]
+						"0.375": {
+							"vector": [17.5, 0, 0]
+						},
+						"1.0417": {
+							"vector": [-15, 0, 0]
 						},
 						"1.5": {
-							"vector": [-37.5, 0, 0]
-						}
-					}
-				},
-				"nose": {
-					"rotation": {
-						"0.0417": {
-							"vector": [0, 2.5, 0]
+							"vector": [17.5, 0, 0]
 						},
-						"1.2917": {
-							"vector": [0, -2.5, 0]
+						"2.0": {
+							"vector": [-2.5, 0, 0]
 						}
 					}
 				},
 				"tail": {
 					"rotation": {
-						"0.6667": {
-							"vector": [-5, 0, 0]
+						"0.375": {
+							"vector": [0, 0, 0]
 						},
-						"1.3333": {
-							"vector": [2.5, 0, 0]
+						"1.0417": {
+							"vector": [0, -22.5, 0]
+						},
+						"1.5": {
+							"vector": [0, 20, 0]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
+						}
+					}
+				}
+			}
+		},
+		"animation.chomper.attack": {
+			"loop": true,
+			"animation_length": 2,
+			"bones": {
+				"frontleftleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [5, 5, 0]
+						},
+						"0.5": {
+							"vector": [-52.5, 5, 0]
+						},
+						"1.8333": {
+							"vector": [5, 5, 0]
+						}
+					}
+				},
+				"frontrightleg": {
+					"rotation": {
+						"0.0": {
+							"vector": [5, 0, 0]
+						},
+						"1.0833": {
+							"vector": [-57.5, 0, 0]
+						},
+						"1.8333": {
+							"vector": [7.5, 0, 0]
 						}
 					}
 				}
@@ -44,60 +78,79 @@
 				"backleftleg": {
 					"rotation": {
 						"0.0": {
-							"vector": [-70, 0, 0]
+							"vector": [5, 0, 0]
 						},
 						"1.0": {
-							"vector": [17.5, 0, 0]
+							"vector": [55, 0, 0]
+						},
+						"1.5": {
+							"vector": [29.13554, -16.76559, -11.06517]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
 						}
 					}
 				},
 				"backrightleg": {
 					"rotation": {
 						"0.0": {
-							"vector": [27.5, 0, 0]
+							"vector": [-5, 0, 0]
+						},
+						"0.5": {
+							"vector": [30.01527, -14.47915, -9.93573]
 						},
 						"1.0": {
-							"vector": [-45, 0, 0]
+							"vector": [62.5, 0, 0]
+						},
+						"1.5": {
+							"vector": [28.7424, 14.6914, 9.61518]
+						},
+						"2.0": {
+							"vector": [-7.5, 0, 0]
 						}
 					}
 				},
 				"frontleftleg": {
 					"rotation": {
 						"0.0": {
-							"vector": [-20, 0, 0]
+							"vector": [2.5, 0, 0]
+						},
+						"0.5": {
+							"vector": [-23.47603, 16.1299, -6.88003]
 						},
 						"1.0": {
-							"vector": [22.5, 0, 0]
+							"vector": [-47.5, 0, 0]
+						},
+						"1.5": {
+							"vector": [-26.05573, 15.81499, -7.59001]
+						},
+						"2.0": {
+							"vector": [-2.5, 0, 0]
 						}
 					}
 				},
 				"frontrightleg": {
 					"rotation": {
 						"0.0": {
-							"vector": [17.5, 0, 0]
-						},
-						"1.0": {
-							"vector": [-10, 0, 0]
-						}
-					}
-				}
-			}
-		},
-		"animation.chomper.attack": {
-			"loop": true,
-			"animation_length": 1.5,
-			"bones": {
-				"frontrightleg": {
-					"rotation": {
-						"0.0": {
 							"vector": [2.5, 0, 0]
 						},
-						"0.75": {
-							"vector": [77.5, 0, 0]
+						"0.5": {
+							"vector": [-23.78773, -18.42031, 7.92945]
 						},
-						"1.4583": {
-							"vector": [-6.96768, 0.39981, 1.80402]
+						"1.0": {
+							"vector": [-47.5, 0, 0]
+						},
+						"1.5": {
+							"vector": [-25.46678, -20.50411, 9.47105]
+						},
+						"2.0": {
+							"vector": [0, 0, 0]
 						}
+					}
+				},
+				"lowerbackleftleg": {
+					"rotation": {
+						"vector": [0, -2.5, 0]
 					}
 				}
 			}
