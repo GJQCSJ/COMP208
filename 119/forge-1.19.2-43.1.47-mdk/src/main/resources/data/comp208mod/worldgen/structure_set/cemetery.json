@@ -1,0 +1,18 @@
+{
+
+  "structures": [
+    {
+      "structure": "comp208mod:cemetery",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "salt": 5354623748,
+
+    "spacing": 20,
+
+    "separation": 6,
+
+    "type": "minecraft:random_spread"
+  }
+}
