@@ -4,11 +4,11 @@
 
 
             "rolls": 1,
-            "bonus_rolls": 0,
+            "bonus_rolls": 1,
             "entries": [
                 {
                     "type": "minecraft:item",
-                    "weight": 2,
+                    "weight": 200,
                     "quality": 2,
                     "name": "comp208mod:custom_berry"
                 },
@@ -34,6 +34,12 @@
             "rolls": 1,
             "bonus_rolls": 0,
             "entries": [
+                {
+                    "type": "minecraft:item",
+                    "weight": 200,
+                    "quality": 1,
+                    "name": "comp208mod:test_food1"
+                },
                 {
                     "type": "minecraft:item",
                     "weight": 2,
