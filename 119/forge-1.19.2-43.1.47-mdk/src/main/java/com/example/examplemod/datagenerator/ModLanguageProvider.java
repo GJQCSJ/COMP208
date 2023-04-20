@@ -56,6 +56,8 @@ public class ModLanguageProvider extends LanguageProvider {
         add(ModBlocks.MANA_EXTRACTOR_BLOCK.get(), "Extractor");
         add(MESSAGE_MANA_EXTRACTOR, "The extractor is extracting %s per tick");
         add(SCREEN_MANA_EXTRACTOR, "Mana Extractor");
+        add(ModBlocks.GENERATOR.get(), "Ore Generator");
+        add(ModItems.GENERATED_ITEM.get(), "Refined Star stone");
 
 
 //        add(ModItems.AUTO_TEST_ITEM.get(), "Auto json test");
