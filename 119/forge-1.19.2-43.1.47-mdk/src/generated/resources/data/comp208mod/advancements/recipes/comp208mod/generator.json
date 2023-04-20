@@ -3,16 +3,16 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "comp208mod:great_sword"
+        "recipe": "comp208mod:generator"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "ironsword": {
+    "starstone": {
       "conditions": {
         "items": [
           {
             "items": [
-              "comp208mod:spodumene"
+              "comp208mod:starstone"
             ]
           }
         ]
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "ironsword",
+      "starstone",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "comp208mod:great_sword"
+      "comp208mod:generator"
     ]
   }
 }

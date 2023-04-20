@@ -3,11 +3,11 @@
   "criteria": {
     "has_the_recipe": {
       "conditions": {
-        "recipe": "comp208mod:great_sword"
+        "recipe": "comp208mod:test_leggings"
       },
       "trigger": "minecraft:recipe_unlocked"
     },
-    "ironsword": {
+    "leg": {
       "conditions": {
         "items": [
           {
@@ -22,13 +22,13 @@
   },
   "requirements": [
     [
-      "ironsword",
+      "leg",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "comp208mod:great_sword"
+      "comp208mod:test_leggings"
     ]
   }
 }

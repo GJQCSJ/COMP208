@@ -1,13 +1,7 @@
 {
   "parent": "minecraft:recipes/root",
   "criteria": {
-    "has_the_recipe": {
-      "conditions": {
-        "recipe": "comp208mod:great_sword"
-      },
-      "trigger": "minecraft:recipe_unlocked"
-    },
-    "ironsword": {
+    "chest": {
       "conditions": {
         "items": [
           {
@@ -18,17 +12,23 @@
         ]
       },
       "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "comp208mod:test_chest_plate"
+      },
+      "trigger": "minecraft:recipe_unlocked"
     }
   },
   "requirements": [
     [
-      "ironsword",
+      "chest",
       "has_the_recipe"
     ]
   ],
   "rewards": {
     "recipes": [
-      "comp208mod:great_sword"
+      "comp208mod:test_chest_plate"
     ]
   }
 }

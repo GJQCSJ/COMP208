@@ -1,6 +1,5 @@
-// 1.19.2	2023-04-19T23:31:46.7447848	Auto Tags
-046a12ffc3032120496ed1ee0f6926bea8ef5d11 data/comp208mod/tags/blocks/spodumene_ore.json
-4432086fcf5a51f3256319f0d92e13340de8a650 data/comp208mod/tags/blocks/starstone_ore.json
-1924aefcd4d0dded11c3bb85a03d50306b511835 data/forge/tags/blocks/ores.json
-84f0b860a1a1a1ff7dd26475977e1b2ab7949f29 data/minecraft/tags/blocks/mineable/pickaxe.json
-84f0b860a1a1a1ff7dd26475977e1b2ab7949f29 data/minecraft/tags/blocks/needs_iron_tool.json
+// 1.19.2	2023-04-20T18:21:38.9596953	Auto Tags
+5a344ee9a43e0e627787686a36b7b48c0ff54273 data/comp208mod/tags/items/generator_generated.json
+d4baacbee240a165d638644d0b3e4cb3db22a138 data/comp208mod/tags/items/spodumene_ore.json
+9862cafb807e4709e5c6dcd86ffcb3261f27922b data/comp208mod/tags/items/starstone_item.json
+b1ec795342e9517164667537c5e2c3ab24517f34 data/forge/tags/items/ores.json
